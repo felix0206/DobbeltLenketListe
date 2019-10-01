@@ -1,5 +1,6 @@
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.Objects;
 
 public class DobbeltLenketListe<T> implements Liste<T>
 {
@@ -46,7 +47,45 @@ public class DobbeltLenketListe<T> implements Liste<T>
     // konstruktør
     public DobbeltLenketListe(T[] a)
     {
-        //Lage dobbeltlenket liste
+        if (a.length == 0){
+            throw new NullPointerException("Listen er tom!");
+        }
+
+        int teller = 0;
+        while (a[teller] == null){
+            teller++;
+        }
+
+        Node hode = new Node(a[teller]);
+        Node hale = hode;
+        this.hode = hode;
+        this.hale=hode;
+
+        Node forrigeNode = hode;
+        forrigeNode.verdi = a[teller];
+        this.hale.verdi=a[teller]          ;
+
+        for (int i = teller+1; i<a.length; i++){
+
+            while(a[i]==null && i < a.length-1){
+                i++;
+            }
+            if (i == a.length-1 && a[i] == null){
+                break;
+            }
+
+            Node nyNode = new Node(a[i]);
+            nyNode.forrige = forrigeNode;
+            forrigeNode.neste = nyNode;
+
+            forrigeNode = nyNode;
+            hale = nyNode;
+        }
+
+        hale.neste=null;
+        this.hale=hale;
+        this.hale.verdi=(T)hale.verdi;
+
 
     }
 
@@ -59,10 +98,6 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public int antall()
     {
-
-        if (antall == 0){
-            return 0;
-        }
         return antall;
     }
 
@@ -132,7 +167,22 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public String toString()
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        String ut = "";
+        Node current = hode;
+
+        if (current.neste == null){
+            return " "+ hode.verdi;
+        }
+
+        while(current.neste!=null){
+            ut+=current.verdi;
+            current= current.neste;
+        }
+
+        if (hode!=hale){
+            ut+= " "+current.verdi;
+        }
+       return ut;
     }
 
     public String omvendtString()
