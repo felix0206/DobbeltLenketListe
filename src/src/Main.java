@@ -3,7 +3,7 @@ public class Main {
 
         Liste<String> liste = new DobbeltLenketListe<>();
 
-        String[] a = {"a","a",null};
+        String[] a = {"a",null};
         System.out.println(liste.antall() + " " + liste.tom());
 
         DobbeltLenketListe<String> test = new DobbeltLenketListe<>(a);
