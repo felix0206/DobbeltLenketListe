@@ -33,7 +33,23 @@ public class DobbeltLenketListe<T> implements Liste<T>
     // hjelpemetode
     private Node<T> finnNode(int indeks)
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        Node current = hode;
+        int teller = 0;
+
+        if (indeks == antall - 1){
+            return this.hale;
+        }
+
+        while (current.neste != null){
+            if(teller == indeks){
+                return current;
+            }
+            current=current.neste;
+            teller++;
+        }
+        return null;
+
+        //TODO: problem med skillverdi
     }
 
     // konstruktør
