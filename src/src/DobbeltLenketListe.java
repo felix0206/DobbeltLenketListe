@@ -197,20 +197,23 @@ public class DobbeltLenketListe<T> implements Liste<T>
         Node current = hode;
 
         if (hode == null){
-            return "";
+            return "[]";
         }
         if (current.neste == null){
             ut.append(hode.verdi);
-            return ut.toString();
+            return "["+ut.toString()+"]";
         }
-
+        ut.append("[");
         while(current.neste!=null){
-            ut.append(current.verdi);
+            ut.append(current.verdi + ", ");
             current= current.neste;
+
         }
 
         if (hode!=hale){
-            ut.append(" "+current.verdi) ;
+
+            ut.append(current.verdi) ;
+            ut.append("]");
         }
        return ut.toString();
     }
@@ -222,21 +225,24 @@ public class DobbeltLenketListe<T> implements Liste<T>
         Node current = hale;
 
         if (hale == null){
-            return "";
+            return "[]";
         }
         if (current.forrige == null){
             ut.append(hale.verdi);
-            return ut.toString();
+            return "["+ut.toString()+"]";
         }
-
+        ut.append("[");
         while(current.forrige!=null){
-            ut.append(current.verdi);
+
+            ut.append(current.verdi+", ");
             current= current.forrige;
+
         }
 
         if (hode!=hale){
-            ut.append(" "+current.verdi) ;
+            ut.append(""+current.verdi) ;
         }
+        ut.append("]");
         return ut.toString();
     }
 
