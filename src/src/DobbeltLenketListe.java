@@ -63,7 +63,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
         Node forrigeNode = hode;
         forrigeNode.verdi = a[teller];
-        this.hale.verdi=a[teller]          ;
+        this.hale.verdi=a[teller];
 
         for (int i = teller+1; i<a.length; i++){
 
@@ -187,7 +187,22 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
     public String omvendtString()
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        String ut = "";
+        Node current = hale;
+
+        if (current.forige == null){
+            return " "+ hale.verdi;
+        }
+
+        while(current.forige!=null){
+            ut+=current.verdi;
+            current= current.neste;
+        }
+
+        if (hale!=hode){
+            ut+= " "+current.verdi;
+        }
+        return ut;
     }
 
     public static <T> void sorter(Liste<T> liste, Comparator<? super T> c)
