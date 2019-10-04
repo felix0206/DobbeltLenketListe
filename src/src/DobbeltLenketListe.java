@@ -113,7 +113,32 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public boolean leggInn(T verdi)
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+
+        Objects.requireNonNull(verdi,"Nullverdier er ikke tillatt!");
+
+        //Tilfelle 1. tom liste
+
+        if (hode == null && hale == null){
+            Node nyNode = new Node(verdi);
+            nyNode.forrige = null;
+            hale = nyNode;
+            hode = nyNode;
+            antall++;
+
+            return true;
+        }
+
+        //Tilfelle 2.
+
+        Node nyNode = new Node(verdi);
+        nyNode.forrige = hale;
+        nyNode.neste = null;
+        hale.neste = nyNode;
+        hale  = nyNode;
+        antall++;
+
+        return true;
+
     }
 
     @Override
@@ -167,42 +192,52 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public String toString()
     {
-        String ut = "";
+        StringBuilder ut = new StringBuilder();
+
         Node current = hode;
 
+        if (hode == null){
+            return "";
+        }
         if (current.neste == null){
-            return " "+ hode.verdi;
+            ut.append(hode.verdi);
+            return ut.toString();
         }
 
         while(current.neste!=null){
-            ut+=current.verdi;
+            ut.append(current.verdi);
             current= current.neste;
         }
 
         if (hode!=hale){
-            ut+= " "+current.verdi;
+            ut.append(" "+current.verdi) ;
         }
-       return ut;
+       return ut.toString();
     }
 
     public String omvendtString()
     {
-        String ut = "";
+        StringBuilder ut = new StringBuilder();
+
         Node current = hale;
 
-        if (current.forige == null){
-            return " "+ hale.verdi;
+        if (hale == null){
+            return "";
+        }
+        if (current.forrige == null){
+            ut.append(hale.verdi);
+            return ut.toString();
         }
 
-        while(current.forige!=null){
-            ut+=current.verdi;
-            current= current.neste;
+        while(current.forrige!=null){
+            ut.append(current.verdi);
+            current= current.forrige;
         }
 
-        if (hale!=hode){
-            ut+= " "+current.verdi;
+        if (hode!=hale){
+            ut.append(" "+current.verdi) ;
         }
-        return ut;
+        return ut.toString();
     }
 
     public static <T> void sorter(Liste<T> liste, Comparator<? super T> c)
