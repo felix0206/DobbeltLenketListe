@@ -63,47 +63,60 @@ public class DobbeltLenketListe<T> implements Liste<T>
     // konstruktør
     public DobbeltLenketListe(T[] a)
     {
-        if (a.length == 0){
-            throw new NullPointerException("Listen er tom!");
-        }
-
-        int teller = 0;
-        while (a[teller] == null){
-            teller++;
-        }
-
-        Node hode = new Node(a[teller]);
-        Node hale = hode;
-        this.hode = hode;
-        this.hale=hode;
-
-        Node forrigeNode = hode;
-        forrigeNode.verdi = a[teller];
-        this.hale.verdi=a[teller];
-
-        for (int i = teller+1; i<a.length; i++){
-
-            while(a[i]==null && i < a.length-1){
-                i++;
-            }
-            if (i == a.length-1 && a[i] == null){
-                break;
-            }
-
-            Node nyNode = new Node(a[i]);
-            nyNode.forrige = forrigeNode;
-            forrigeNode.neste = nyNode;
-
-            forrigeNode = nyNode;
-            hale = nyNode;
-        }
-
-        hale.neste=null;
-        this.hale=hale;
-        this.hale.verdi=(T)hale.verdi;
-
-
+        //Sjekker at tabellen ikke er null.
+        Objects.requireNonNull(a, "Tabellen a er null!");
+        //Dersom tabellen bare har et element vil jeg bare legge til dette elementet.
+        if(a.length == 1){
+           leggTilFørste(a[0]);
+       } else {
+            //Dersom elementene er partall legger jeg de inn i listen fra hver sin side av tabellen helt til alle er lagt til
+            //Usikker på om dette faktisk gjør den raskere men var gøy å prøve :P.
+       if(a.length % 2 == 0){
+       for(int i = 0; i < a.length/2; i++){
+        leggTilFørste(a[i]);
+        leggTilSiste(a[a.length-i-1]);
+       } }else{
+           //Dersom det er et oddetall av elementer fungerer ikke metoden over og jeg bruker derfor en alternativ metode for dette hvor jeg
+           // bare legger til elementer 1 og 1 fra begynnelsen av listen.
+           for(int i = 0; i < a.length; i++){
+               leggTilFørste(a[i]);
+           }
+       } }
     }
+
+    //legger til elementene i begynnelsen av listen
+    public void leggTilFørste(T a) {
+        if(a != null){
+        Node CurrentNode = new Node(a);
+        if(hode != null ) {
+            hode.neste = CurrentNode;
+        }
+        hode = CurrentNode;
+        if(hale == null) {
+            hale = CurrentNode;
+        }
+        antall++;}
+    }
+
+    //legger til elementene i slutten av listen
+    public void leggTilSiste(T a) {
+        //Sjekker at verdien ikke = null
+        if(a != null){
+        //Instansierer node med verdi a og en nestepeker til halen
+        Node CurrentNode = new Node(a);
+      //Sjekker om hale sin verdi ikke er null, og setter hale.neste
+        if(hale != null) {
+            hale.forrige = CurrentNode;
+        }
+        hale = CurrentNode;
+        if(hode == null) {
+            hode = CurrentNode;
+        }
+        antall++;}
+    }
+
+
+
 
     // subliste
     public Liste<T> subliste(int fra, int til)
