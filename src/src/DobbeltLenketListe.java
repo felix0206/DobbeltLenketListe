@@ -228,16 +228,13 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public boolean inneholder(T verdi)
     {
-        Node current = hode;
-
-        for(int i = 0; i < antall; i++){
-            if(verdi.equals(current)){
-                return true;
-            }
-            current = current.neste;
-        }
-        return false;
+       if (indeksTil(verdi) == -1){
+           return false;
+       } else {
+           return true;
+       }
     }
+
 
     @Override
     public T hent(int indeks)
