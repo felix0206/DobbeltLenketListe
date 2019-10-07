@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Objects;
@@ -30,7 +31,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
     private int antall;            // antall noder i listen
     private int endringer;   // antall endringer i listen
 
-    // hjelpemetode
+    // hjelpemetode finnNode finner en node til en gitt indeks.
     private Node<T> finnNode(int indeks)
     {
         Node current = hode;
@@ -95,7 +96,8 @@ public class DobbeltLenketListe<T> implements Liste<T>
         if(hale == null) {
             hale = CurrentNode;
         }
-        antall++;}
+        antall++;
+        }
     }
 
     //legger til elementene i slutten av listen
@@ -162,6 +164,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
         return false;
     }
 
+
     @Override
     public boolean leggInn(T verdi)
     {
@@ -224,7 +227,15 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public boolean inneholder(T verdi)
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        Node current = hode;
+
+        for(int i = 0; i < antall; i++){
+            if(verdi.equals(current)){
+                return true;
+            }
+            current = current.neste;
+        }
+        return false;
     }
 
     @Override
@@ -236,7 +247,15 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public int indeksTil(T verdi)
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+            Node current = hode;
+
+            for(int i = 0; i < antall; i++){
+                if(verdi.equals(current)){
+                    return i;
+                }
+                current = current.neste;
+            }
+        return -1;
     }
 
     @Override
