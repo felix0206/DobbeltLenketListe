@@ -390,8 +390,12 @@ public class DobbeltLenketListe<T> implements Liste<T>
     }
 
     public static <T> void sorter(Liste<T> liste, Comparator<? super T> c)
-    {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+    { // tester dette imrg vet ikke om det er i nærheten
+     /*   for(int i = 0; i < c / 2; i++){
+            int temp = liste[i];
+            liste[i] = liste[c-i-1];
+            liste[c-i-1] = temp;
+        } */
     }
 
     @Override
