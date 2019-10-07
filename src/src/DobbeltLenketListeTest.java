@@ -247,7 +247,7 @@ class DobbeltLenketListeTest {
         if (!t1.equals(t2)) {
             antallFeil++;
             System.out.println
-                    ("Oppgave 2m: Du har " + t2 + ", men det skal være " + t1);
+                    ("Oppgave 2n: Du har " + t2 + ", men det skal være " + t1);
         }
 
         for (int i = 0; i < 20000; i++) liste.leggInn(i);

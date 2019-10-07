@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 import java.util.Objects;
 
 public class DobbeltLenketListe<T> implements Liste<T>
@@ -32,26 +33,37 @@ public class DobbeltLenketListe<T> implements Liste<T>
     private int endringer;   // antall endringer i listen
 
     // hjelpemetode finnNode finner en node til en gitt indeks.
-    private Node<T> finnNode(int indeks)
-    {
-        Node current = hode;
-        int teller = 0;
-
-        if (indeks == antall - 1){
-            return this.hale;
-        }
-
-        while (current.neste != null){
-            if(teller == indeks){
+    private Node<T> finnNode(int indeks) {
+        if(indeks < antall && indeks >= 0){
+        if (indeks < antall/2){
+            int teller = 0;
+            Node current = hode;
+            while (current != null){
+                if(teller != indeks){
+                    current = current.neste;
+                    teller++;
+                }
                 return current;
             }
-            current=current.neste;
-            teller++;
+        }else {
+            int teller = antall-1;
+            Node curr = hale;
+            while (curr != null) {
+                if (teller != indeks) {
+                    curr = curr.forrige;
+                    teller++;
+                }
+                return curr;
+            }
         }
-        return null;
+        throw new NoSuchElementException("");
+        }
+        else {
+            throw new IndexOutOfBoundsException("");
 
-        //TODO: problem med skillverdi
+        }
     }
+
 
     // konstruktør
     public DobbeltLenketListe()
@@ -66,29 +78,32 @@ public class DobbeltLenketListe<T> implements Liste<T>
     {
         //Sjekker at tabellen ikke er null.
         Objects.requireNonNull(a, "Tabellen a er null!");
-        //Dersom tabellen bare har et element vil jeg bare legge til dette elementet.
-        if(a.length == 1){
-           leggTilFørste(a[0]);
-       } else {
+        int antallElementer = a.length;
+        //Dersom tabellen bare har et element vil jeg bare legge til dette.
+        if(antallElementer == 1) {
+            leggTilFørste(a[0]);
+        }else{
             //Dersom elementene er partall legger jeg de inn i listen fra hver sin side av tabellen helt til alle er lagt til
             //Usikker på om dette faktisk gjør den raskere men var gøy å prøve :P.
-       if(a.length % 2 == 0){
-       for(int i = 0; i < a.length/2; i++){
+       if(antallElementer % 2 == 0){
+       for(int i = 0; i < antallElementer/2; i++){
         leggTilFørste(a[i]);
-        leggTilSiste(a[a.length-i-1]);
+        leggTilSiste(a[antallElementer-i-1]);
        } }else{
            //Dersom det er et oddetall av elementer fungerer ikke metoden over og jeg bruker derfor en alternativ metode for dette hvor jeg
            // bare legger til elementer 1 og 1 fra begynnelsen av listen.
-           for(int i = 0; i < a.length; i++){
+           for(int i = 0; i < antallElementer; i++){
                leggTilFørste(a[i]);
            }
-       } }
+       }
+       }
     }
 
     //legger til elementene i begynnelsen av listen
     public void leggTilFørste(T a) {
         if(a != null){
         Node CurrentNode = new Node(a);
+        antall++;
         if(hode != null ) {
             hode.neste = CurrentNode;
         }
@@ -96,7 +111,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
         if(hale == null) {
             hale = CurrentNode;
         }
-        antall++;
+
         }
     }
 
@@ -128,7 +143,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
         DobbeltLenketListe<T> liste = new DobbeltLenketListe<>();
         for(int i = fra; i<til; i++){
             Node nyNode = finnNode(i);
-            liste.leggInn((T)nyNode.verdi);
+            liste.leggInn((T) nyNode.verdi);
         }
         return liste;
 
@@ -237,9 +252,9 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
 
     @Override
-    public T hent(int indeks)
-    {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+    public T hent(int indeks) {
+        indeksKontroll(indeks, false);
+      return finnNode(indeks).verdi;
     }
 
     @Override
@@ -259,19 +274,37 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public T oppdater(int indeks, T nyverdi)
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        //Kontrolerer indeks
+        indeksKontroll(indeks, false);
+        //Kontrolerer ny verdi
+        Objects.requireNonNull(nyverdi);
+        //Setter objektet til indeksen i gitt posisjon til en oldNodeValue.
+        T oldNodeValue = finnNode(indeks).verdi;
+        //Fjerner denne verdien med metoden fjern
+        fjern(indeks);
+        //Legger til den nye verdien til listen.
+        leggInn(indeks, nyverdi);
+        //plusser på antall endringer
+        endringer++;
+        //Returnerer den gamle verdien.
+        return  oldNodeValue;
+
     }
 
     @Override
     public boolean fjern(T verdi)
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        return true;
     }
 
     @Override
     public T fjern(int indeks)
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        Node curr = new Node(hent(indeks));
+
+        curr.forrige = curr.neste;
+        curr.neste = curr.forrige;
+        return  hent(indeks);
     }
 
     @Override
