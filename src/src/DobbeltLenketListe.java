@@ -215,6 +215,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
             nyNode.forrige = null;
             nyNode.neste = forrigeHode.neste;
             hode = nyNode;
+
         }else if (indeks == antall-1){
             Node nyNode = new Node(verdi);
             Node forrigeHale = this.hale;
