@@ -311,18 +311,24 @@ public class DobbeltLenketListe<T> implements Liste<T>
     public void nullstill()
     {
         //Metode 1:
-        Node current = hode;            //Starter i hode.
+        Node current = new Node(hent(0));            //Starter i hode.
+        hode = current;
 
-        while(current.neste != null){   //Går gjennom nodene.
-            current = null;
-            current.neste = hode;
+        for (int i = 0; i < antall; i++){
+                current.forrige = null;
+                endringer++;                // Oppdaterer antall endringer i listen.
+                if (i == antall){
+                    antall = 0;             //Oppdaterer antall i listen.
+                }
         }
 
         //metode 2:
         for (int i = 0; i < antall; i++){   //Går gjennom nodene.
             if (current.neste != null) {
                 fjern(i);                   //bruker metoden fjern for å slette en og en node.
+                endringer++;                // Oppdaterer antall endringer i listen.
             }
+            antall = 0;                     //Oppdaterer antall i listen.
         }
     }
 
