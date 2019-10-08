@@ -18,6 +18,7 @@ public class Main {
 
         }
 
+
        /* Character[] c = {'A','B','C','D','E','F','G','H','I','J'};
         DobbeltLenketListe<Character> liste2 = new DobbeltLenketListe<>(c);
 //        System.out.println(liste2.subliste(3,8));

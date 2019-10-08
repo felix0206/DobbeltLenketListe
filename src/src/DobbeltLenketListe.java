@@ -87,47 +87,49 @@ public class DobbeltLenketListe<T> implements Liste<T>
         //Finner antall elementer som ikke er null
         //Dersom tabellen bare har et element vil jeg bare legge til dette.
 
-
+        if(antallElementer == 1) {
+            leggTilFørste(a[0]);
+        }else{
            while (antallIkkeNulleElementer != antall()){
                leggTilFørste(a[j]);
                 j++;
-           }
+           }}
        }
 
 
     //legger til elementene i begynnelsen av listen
     public void leggTilFørste(T a) {
         if(a != null){
-        Node currentNode = new Node(a, hode, null);
+        Node CurrentNode = new Node(a);
         if(hode != null ) {
-            hode.forrige = currentNode;
+            hode.neste = CurrentNode;
         }
-        hode = currentNode;
+        hode = CurrentNode;
         if(hale == null) {
-            hale = currentNode;
+            hale = CurrentNode;
         }
             antall++;
         }
     }
 
     //legger til elementene i slutten av listen. Brukte denne til å legge til elementer både først og sist i liste, men fant ut at det ikke gikk noe raskere
-//    public void leggTilSiste(T a) {
-//        //Sjekker at verdien ikke = null
-//        if(a != null){
-//        //Instansierer node med verdi a og en nestepeker til halen
-//        Node CurrentNode = new Node(a);
-//      //Sjekker om hale sin verdi ikke er null, og setter hale.neste
-//        if(hale != null) {
-//            hale.forrige = CurrentNode;
-//        }
-//        hale = CurrentNode;
-//        if(hode == null) {
-//            hode = CurrentNode;
-//        }
-//        antall++;
-//        }
-//    }
-////
+    public void leggTilSiste(T a) {
+        //Sjekker at verdien ikke = null
+        if(a != null){
+        //Instansierer node med verdi a og en nestepeker til halen
+        Node CurrentNode = new Node(a);
+      //Sjekker om hale sin verdi ikke er null, og setter hale.neste
+        if(hale != null) {
+            hale.forrige = CurrentNode;
+        }
+        hale = CurrentNode;
+        if(hode == null) {
+            hode = CurrentNode;
+        }
+        antall++;
+        }
+    }
+//
 
 
 
@@ -139,7 +141,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
         DobbeltLenketListe<T> liste = new DobbeltLenketListe<>();
         for(int i = fra; i<til; i++){
             Node nyNode = finnNode(i);
-            liste.leggInn((T) nyNode);
+            liste.leggInn((T) nyNode.verdi);
         }
         return liste;
 
@@ -233,6 +235,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
             forrigeHale.forrige.neste = nyNode;
             nyNode.neste = null;
             hale = nyNode;
+
         }
     }
 
@@ -322,39 +325,35 @@ public class DobbeltLenketListe<T> implements Liste<T>
         endringer++;
         antall = 0;
 
-
-
-
-      /*
-        //metode 2:
-       for (int i = 0; i < antall; i++){   //Går gjennom nodene.
-            if (current.neste != null) {
-                fjern(i);                   //bruker metoden fjern for å slette en og en node.
-                endringer++;                // Oppdaterer antall endringer i listen.
-            }
-            antall = 0;                     //Oppdaterer antall i listen.
-        }*/
     }
 
     @Override
     public String toString()
     {
         StringBuilder ut = new StringBuilder();
+
         Node current = hode;
 
-        if (current == null){
-            ut.append("[]");
-        }else {
-
-            ut.append("[");
-            ut.append(current.verdi);
-            current = current.neste;
-            while (current != null) {
-                ut.append(", " + current.verdi);
-                current = current.neste;
-            }
-            ut.append("]");
+        if (hode == null){
+            return "[]";
         }
+        if (current.neste == null){
+            ut.append(hode.verdi);
+            return "["+ut.toString()+"]";
+        }
+        ut.append("[");
+        while(current.neste!=null){
+            ut.append(current.verdi + ", ");
+            current= current.neste;
+
+
+        }
+
+        if (!hode.equals(hale)){
+
+            ut.append(current.verdi);
+
+        }ut.append("]");
        return ut.toString();
     }
 
@@ -364,19 +363,25 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
         Node current = hale;
 
-        if (current == null){
-            ut.append( "[]");
-        }else {
-
-            ut.append("[");
-            ut.append(current.verdi);
-            current = current.forrige;
-            while (current != null) {
-                ut.append(", " + current.verdi);
-                current = current.forrige;
-            }
-            ut.append("]");
+        if (hale == null){
+            return "[]";
         }
+        if (current.forrige == null){
+            ut.append(hale.verdi);
+            return "["+ut.toString()+"]";
+        }
+        ut.append("[");
+        while(current.forrige!=null){
+
+            ut.append(current.verdi+", ");
+            current= current.forrige;
+
+        }
+
+        if (hode!=hale){
+            ut.append(""+current.verdi) ;
+        }
+        ut.append("]");
         return ut.toString();
     }
 
@@ -397,7 +402,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
     public Iterator<T> iterator(int indeks)
     {
         indeksKontroll(indeks, true);
-        return iterator();
+        return new DobbeltLenketListeIterator(indeks);
     }
 
     private class DobbeltLenketListeIterator implements Iterator<T>
@@ -429,8 +434,6 @@ public class DobbeltLenketListe<T> implements Liste<T>
         @Override
         public T next()
         {
-
-            Node<T> p = hode;
             if(iteratorendringer != endringer){
                 throw new ConcurrentModificationException("ER IKKE LIK");
             }
@@ -438,27 +441,20 @@ public class DobbeltLenketListe<T> implements Liste<T>
                 throw new NoSuchElementException("ER IKKE FLERE IGJEN I LISTEN");
             }
             fjernOK = true;
-            p = p.neste;
-            T verdien = p.verdi;
-            return verdien;
+            denne = denne.neste;
+            return denne.verdi;
         }
 
         @Override
         public void remove()
         {
-            if (antall == 0){
-                throw new IllegalStateException("Det er ikke tillatt å kalle denne funksjonen nå!");
+
+            if (!fjernOK){
+                throw new IllegalStateException("Ulovlig tilstand!");
             }
 
             if (endringer != iteratorendringer){
                 throw new ConcurrentModificationException("Endringer og iteratorendringer er ikke like!");
-            }
-
-            fjernOK = false;
-
-            if (antall == 1){
-                hode = null;
-                hale = null;
             }
 
 
