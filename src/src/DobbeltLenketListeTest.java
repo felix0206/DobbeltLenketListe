@@ -242,7 +242,9 @@ class DobbeltLenketListeTest {
 
         liste = new DobbeltLenketListe<>(new Integer[]{null, 1, null, 2, null});
         t1 = "[1, 2]";
+        System.out.println(liste.omvendtString());
         t2 = liste.toString();
+        System.out.println(t2);
 
         if (!t1.equals(t2)) {
             antallFeil++;

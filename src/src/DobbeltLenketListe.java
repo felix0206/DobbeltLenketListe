@@ -328,60 +328,51 @@ public class DobbeltLenketListe<T> implements Liste<T>
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
+//        Kommentarer se omvendtString metoden
         StringBuilder ut = new StringBuilder();
-
         Node current = hode;
 
-        if (hode == null){
-            return "[]";
-        }
-        if (current.neste == null){
-            ut.append(hode.verdi);
-            return "["+ut.toString()+"]";
-        }
-        ut.append("[");
-        while(current.neste!=null){
-            ut.append(current.verdi + ", ");
-            current= current.neste;
-
-
-        }
-
-        if (!hode.equals(hale)){
-
+        if (current == null){
+            ut.append( "[]");
+        }else {
+            ut.append("[");
             ut.append(current.verdi);
-
-        }ut.append("]");
-       return ut.toString();
+            current = current.neste;
+            while (current != null) {
+                ut.append(", " + current.verdi);
+                current = current.neste;
+            }
+            ut.append("]");
+        }
+        return ut.toString();
     }
+
 
     public String omvendtString()
     {
+//      Instansierer en Stringbuilder
         StringBuilder ut = new StringBuilder();
-
+//        Instansierer en Node fra halen
         Node current = hale;
 
-        if (hale == null){
-            return "[]";
+//        Sjekker om node er null som betyr at listen er tom. returnerer derfor et tomt array
+        if (current == null){
+            ut.append( "[]");
+        }else {
+            ut.append("[");
+//            Skriver ut første verdi så det blir riktig i forhold til det oppgaven spør om.
+            ut.append(current.verdi);
+//            Setter Current til neste verdi i listen
+            current = current.forrige;
+//            Iterer gjennom hele listen og skriver ut current verdi.
+            while (current != null) {
+                ut.append(", " + current.verdi);
+                //Setter Current til neste verdi i listen
+                current = current.forrige;
+            }
+            ut.append("]");
         }
-        if (current.forrige == null){
-            ut.append(hale.verdi);
-            return "["+ut.toString()+"]";
-        }
-        ut.append("[");
-        while(current.forrige!=null){
-
-            ut.append(current.verdi+", ");
-            current= current.forrige;
-
-        }
-
-        if (hode!=hale){
-            ut.append(""+current.verdi) ;
-        }
-        ut.append("]");
         return ut.toString();
     }
 
