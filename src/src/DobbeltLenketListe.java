@@ -377,7 +377,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
     }
 
     public static <T> void sorter(Liste<T> liste, Comparator<? super T> c)
-    { // tester dette imrg vet ikke om det er i nærheten
+    { // står fast vet ikke helt hva som må gjøres
         DobbeltLenketListe liste2 = new DobbeltLenketListe();
              //  liste2.hode.verdi < liste2.hode.neste
            }
