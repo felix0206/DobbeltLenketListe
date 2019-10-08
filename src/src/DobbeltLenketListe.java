@@ -30,35 +30,31 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
     // hjelpemetode finnNode finner en node til en gitt indeks.
     private Node<T> finnNode(int indeks) {
-        if(indeks < antall && indeks >= 0){
+
         if (indeks < antall/2){
             int teller = 0;
             Node current = hode;
             while (current != null){
-                if(teller != indeks){
-                    current = current.neste;
-                    teller++;
+                if(teller ==indeks){
+                    return current;
                 }
-                return current;
+                current = current.neste;
+                teller++;
             }
         }else {
             int teller = antall-1;
             Node curr = hale;
             while (curr != null) {
-                if (teller != indeks) {
-                    curr = curr.forrige;
-                    teller++;
+                if (teller == indeks) {
+                    return curr;
                 }
-                return curr;
+                curr = curr.forrige;
+                teller--;
             }
         }
-        throw new NoSuchElementException("");
-        }
-        else {
-            throw new IndexOutOfBoundsException("");
-
-        }
+        return hode;
     }
+
 
 
     // konstruktør
@@ -139,7 +135,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
         fratilKontroll(antall, fra, til);
 
         DobbeltLenketListe<T> liste = new DobbeltLenketListe<>();
-        for(int i = fra; i <= til; i++){
+        for(int i = fra; i < til; i++){
             Node nyNode = finnNode(i);
             liste.leggInn((T) nyNode.verdi);
         }
@@ -253,7 +249,11 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public T hent(int indeks) {
         indeksKontroll(indeks, false);
-        return finnNode(indeks).verdi;
+        if(indeks < 0){
+            throw new IndexOutOfBoundsException("");
+        }
+        Node nodeVerdiMedIndex = finnNode(indeks);
+        return (T) nodeVerdiMedIndex.verdi;
     }
 
     @Override
