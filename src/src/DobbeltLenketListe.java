@@ -1,8 +1,5 @@
 import java.awt.*;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
-import java.util.Objects;
+import java.util.*;
 
 public class DobbeltLenketListe<T> implements Liste<T>
 {
@@ -391,22 +388,22 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
     public static <T> void sorter(Liste<T> liste, Comparator<? super T> c)
     { // tester dette imrg vet ikke om det er i nærheten
-     /*   for(int i = 0; i < c / 2; i++){
-            int temp = liste[i];
-            liste[i] = liste[c-i-1];
-            liste[c-i-1] = temp;
+       /* for(int i = 0; i < liste.antall(); i++){
+            int start = liste[0];
+            int slutt = liste.antall()-1;
         } */
     }
 
     @Override
     public Iterator<T> iterator()
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        return new DobbeltLenketListeIterator();
     }
 
     public Iterator<T> iterator(int indeks)
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        indeksKontroll(indeks, true);
+        return iterator();
     }
 
     private class DobbeltLenketListeIterator implements Iterator<T>
@@ -424,7 +421,9 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
         private DobbeltLenketListeIterator(int indeks)
         {
-            throw new UnsupportedOperationException("Ikke laget ennå!");
+            denne=finnNode(indeks); // setter denne til noden indeks
+            fjernOK = false;
+            iteratorendringer = endringer;
         }
 
         @Override
@@ -436,7 +435,18 @@ public class DobbeltLenketListe<T> implements Liste<T>
         @Override
         public T next()
         {
-            throw new UnsupportedOperationException("Ikke laget ennå!");
+
+            Node<T> p = hode;
+            if(iteratorendringer != endringer){
+                throw new ConcurrentModificationException("ER IKKE LIK");
+            }
+            if(hasNext() != true) {
+                throw new NoSuchElementException("ER IKKE FLERE IGJEN I LISTEN");
+            }
+            fjernOK = true;
+            p = p.neste;
+            T verdien = p.verdi;
+            return verdien;
         }
 
         @Override
