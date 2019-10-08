@@ -1,4 +1,3 @@
-import java.awt.*;
 import java.util.*;
 
 public class DobbeltLenketListe<T> implements Liste<T>
@@ -76,59 +75,59 @@ public class DobbeltLenketListe<T> implements Liste<T>
         //Sjekker at tabellen ikke er null.
         Objects.requireNonNull(a, "Tabellen a er null!");
         int antallElementer = a.length;
+        int antallIkkeNulleElementer = 0;
+        int j = 0;
+
+        for (int i = 0; i < antallElementer; i++){
+            if(a[i] != null){
+                antallIkkeNulleElementer++;
+            }
+        }
+
+        //Finner antall elementer som ikke er null
         //Dersom tabellen bare har et element vil jeg bare legge til dette.
-        if(antallElementer == 1) {
-            leggTilFørste(a[0]);
-        }else{
-            //Dersom elementene er partall legger jeg de inn i listen fra hver sin side av tabellen helt til alle er lagt til
-            //Usikker på om dette faktisk gjør den raskere men var gøy å prøve :P.
-       if(antallElementer % 2 == 0){
-       for(int i = 0; i < antallElementer/2; i++){
-        leggTilFørste(a[i]);
-        leggTilSiste(a[antallElementer-i-1]);
-       } }else{
-           //Dersom det er et oddetall av elementer fungerer ikke metoden over og jeg bruker derfor en alternativ metode for dette hvor jeg
-           // bare legger til elementer 1 og 1 fra begynnelsen av listen.
-           for(int i = 0; i < antallElementer; i++){
-               leggTilFørste(a[i]);
+
+
+           while (antallIkkeNulleElementer != antall()){
+               leggTilFørste(a[j]);
+                j++;
            }
        }
-       }
-    }
+
 
     //legger til elementene i begynnelsen av listen
     public void leggTilFørste(T a) {
         if(a != null){
-        Node CurrentNode = new Node(a);
-        antall++;
+        Node currentNode = new Node(a, hode, null);
         if(hode != null ) {
-            hode.neste = CurrentNode;
+            hode.forrige = currentNode;
         }
-        hode = CurrentNode;
+        hode = currentNode;
         if(hale == null) {
-            hale = CurrentNode;
+            hale = currentNode;
         }
-
+            antall++;
         }
     }
 
-    //legger til elementene i slutten av listen
-    public void leggTilSiste(T a) {
-        //Sjekker at verdien ikke = null
-        if(a != null){
-        //Instansierer node med verdi a og en nestepeker til halen
-        Node CurrentNode = new Node(a);
-      //Sjekker om hale sin verdi ikke er null, og setter hale.neste
-        if(hale != null) {
-            hale.forrige = CurrentNode;
-        }
-        hale = CurrentNode;
-        if(hode == null) {
-            hode = CurrentNode;
-        }
-        antall++;}
-    }
-
+    //legger til elementene i slutten av listen. Brukte denne til å legge til elementer både først og sist i liste, men fant ut at det ikke gikk noe raskere
+//    public void leggTilSiste(T a) {
+//        //Sjekker at verdien ikke = null
+//        if(a != null){
+//        //Instansierer node med verdi a og en nestepeker til halen
+//        Node CurrentNode = new Node(a);
+//      //Sjekker om hale sin verdi ikke er null, og setter hale.neste
+//        if(hale != null) {
+//            hale.forrige = CurrentNode;
+//        }
+//        hale = CurrentNode;
+//        if(hode == null) {
+//            hode = CurrentNode;
+//        }
+//        antall++;
+//        }
+//    }
+////
 
 
 
@@ -140,7 +139,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
         DobbeltLenketListe<T> liste = new DobbeltLenketListe<>();
         for(int i = fra; i<til; i++){
             Node nyNode = finnNode(i);
-            liste.leggInn((T) nyNode.verdi);
+            liste.leggInn((T) nyNode);
         }
         return liste;
 
@@ -251,7 +250,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public T hent(int indeks) {
         indeksKontroll(indeks, false);
-      return finnNode(indeks).verdi;
+        return finnNode(indeks).verdi;
     }
 
     @Override
@@ -308,51 +307,52 @@ public class DobbeltLenketListe<T> implements Liste<T>
     public void nullstill()
     {
         //Metode 1:
-        Node current = new Node(hent(0));            //Starter i hode.
-        hode = current;
+        Node current = hode;
 
-        for (int i = 0; i < antall; i++){
-                current.forrige = null;
-                endringer++;                // Oppdaterer antall endringer i listen.
-                if (i == antall){
-                    antall = 0;             //Oppdaterer antall i listen.
-                }
+        while(current.neste != null){
+            hode = hode.neste;
+            current.forrige = null;
+
+            current = hode;
+            endringer++;
         }
+        hale.neste = null;
+        hode.forrige = null;
+        hode = hale = null;
+        endringer++;
+        antall = 0;
 
+
+
+
+      /*
         //metode 2:
-        for (int i = 0; i < antall; i++){   //Går gjennom nodene.
+       for (int i = 0; i < antall; i++){   //Går gjennom nodene.
             if (current.neste != null) {
                 fjern(i);                   //bruker metoden fjern for å slette en og en node.
                 endringer++;                // Oppdaterer antall endringer i listen.
             }
             antall = 0;                     //Oppdaterer antall i listen.
-        }
+        }*/
     }
 
     @Override
     public String toString()
     {
         StringBuilder ut = new StringBuilder();
-
         Node current = hode;
 
-        if (hode == null){
-            return "[]";
-        }
-        if (current.neste == null){
-            ut.append(hode.verdi);
-            return "["+ut.toString()+"]";
-        }
-        ut.append("[");
-        while(current.neste!=null){
-            ut.append(current.verdi + ", ");
-            current= current.neste;
+        if (current == null){
+            ut.append("[]");
+        }else {
 
-        }
-
-        if (hode!=hale){
-
-            ut.append(current.verdi) ;
+            ut.append("[");
+            ut.append(current.verdi);
+            current = current.neste;
+            while (current != null) {
+                ut.append(", " + current.verdi);
+                current = current.neste;
+            }
             ut.append("]");
         }
        return ut.toString();
@@ -364,46 +364,40 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
         Node current = hale;
 
-        if (hale == null){
-            return "[]";
-        }
-        if (current.forrige == null){
-            ut.append(hale.verdi);
-            return "["+ut.toString()+"]";
-        }
-        ut.append("[");
-        while(current.forrige!=null){
+        if (current == null){
+            ut.append( "[]");
+        }else {
 
-            ut.append(current.verdi+", ");
-            current= current.forrige;
-
+            ut.append("[");
+            ut.append(current.verdi);
+            current = current.forrige;
+            while (current != null) {
+                ut.append(", " + current.verdi);
+                current = current.forrige;
+            }
+            ut.append("]");
         }
-
-        if (hode!=hale){
-            ut.append(""+current.verdi) ;
-        }
-        ut.append("]");
         return ut.toString();
     }
 
     public static <T> void sorter(Liste<T> liste, Comparator<? super T> c)
     { // tester dette imrg vet ikke om det er i nærheten
-       /* for(int i = 0; i < liste.antall(); i++){
-            int start = liste[0];
-            int slutt = liste.antall()-1;
+     /*   for(int i = 0; i < c / 2; i++){
+            int temp = liste[i];
+            liste[i] = liste[c-i-1];
+            liste[c-i-1] = temp;
         } */
     }
 
     @Override
     public Iterator<T> iterator()
     {
-        return new DobbeltLenketListeIterator();
+        throw new UnsupportedOperationException("Ikke laget ennå!");
     }
 
     public Iterator<T> iterator(int indeks)
     {
-        indeksKontroll(indeks, true);
-        return iterator();
+        throw new UnsupportedOperationException("Ikke laget ennå!");
     }
 
     private class DobbeltLenketListeIterator implements Iterator<T>
@@ -421,9 +415,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
         private DobbeltLenketListeIterator(int indeks)
         {
-            denne=finnNode(indeks); // setter denne til noden indeks
-            fjernOK = false;
-            iteratorendringer = endringer;
+            throw new UnsupportedOperationException("Ikke laget ennå!");
         }
 
         @Override
@@ -435,24 +427,28 @@ public class DobbeltLenketListe<T> implements Liste<T>
         @Override
         public T next()
         {
-
-            Node<T> p = hode;
-            if(iteratorendringer != endringer){
-                throw new ConcurrentModificationException("ER IKKE LIK");
-            }
-            if(hasNext() != true) {
-                throw new NoSuchElementException("ER IKKE FLERE IGJEN I LISTEN");
-            }
-            fjernOK = true;
-            p = p.neste;
-            T verdien = p.verdi;
-            return verdien;
+            throw new UnsupportedOperationException("Ikke laget ennå!");
         }
 
         @Override
         public void remove()
         {
-            throw new UnsupportedOperationException("Ikke laget ennå!");
+            if (antall == 0){
+                throw new IllegalStateException("Det er ikke tillatt å kalle denne funksjonen nå!");
+            }
+
+            if (endringer != iteratorendringer){
+                throw new ConcurrentModificationException("Endringer og iteratorendringer er ikke like!");
+            }
+
+            fjernOK = false;
+
+            if (antall == 1){
+                hode = null;
+                hale = null;
+            }
+
+
         }
 
     } // DobbeltLenketListeIterator

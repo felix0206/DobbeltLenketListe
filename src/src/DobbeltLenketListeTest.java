@@ -292,6 +292,7 @@ class DobbeltLenketListeTest {
             }
         }
 
+        liste.leggInn(1);
 
         try {
             liste.hent(-1);
