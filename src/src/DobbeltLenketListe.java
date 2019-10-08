@@ -208,31 +208,44 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public void leggInn(int indeks, T verdi)
     {
-        if (indeks<0){
-            throw new IndexOutOfBoundsException("indeks(" + indeks + ") er negativ!");
-        }
-        if (indeks > antall){
-            throw new IndexOutOfBoundsException("indeks(" + indeks + ") > antall (" + antall + ")" );
-        }
-
         Objects.requireNonNull(verdi);
-        indeksKontroll(indeks, false);
+        indeksKontroll(indeks,true);
+        if(indeks==0){
+            if (antall == 0) {
+                Node nyNode = new Node(verdi);
+                nyNode.forrige = null;
+                nyNode.neste = null;
+                hode = hale = nyNode;
+            }
 
-        if (indeks == (0)) {
+            else{
+                Node<T> p = hode;
+                Node nyNode = new Node(verdi);
+                nyNode.forrige = null;
+                nyNode.neste = hode;
+                hode = nyNode;
+                p.forrige = hode;
+            }
+        }
+        else if(indeks == antall){
             Node nyNode = new Node(verdi);
-            Node forrigeHode = this.hode;
-            nyNode.forrige = null;
-            nyNode.neste = forrigeHode.neste;
-            hode = nyNode;
-
-        }else if (indeks == antall-1){
-            Node nyNode = new Node(verdi);
-            Node forrigeHale = this.hale;
-            forrigeHale.forrige.neste = nyNode;
+            nyNode.forrige = hale;
             nyNode.neste = null;
-            hale = nyNode;
+            hale = hale.neste = nyNode;
 
         }
+        else{
+            Node<T> q = hode;
+            Node<T> p = hode;
+            for (int i = 1; i < indeks; i++) p = p.neste;
+            for(int i = 1; i < indeks + 1; i++) q = q.neste;
+            Node r = new Node(verdi);
+            r.forrige = p;
+            r.neste = q;
+            p.neste = q.forrige = r;
+        }
+        endringer++;
+        antall++;
     }
 
     @Override
