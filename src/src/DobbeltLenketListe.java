@@ -431,7 +431,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
             }
             fjernOK = true;
             T value = (T)this.denne.verdi;
-            denne = denne.neste;
+            denne = denne.neste;  // itereres igjennom lista
             return value;
         }
 
