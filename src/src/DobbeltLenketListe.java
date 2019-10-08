@@ -1,7 +1,4 @@
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
-import java.util.Objects;
+import java.util.*;
 
 public class DobbeltLenketListe<T> implements Liste<T>
 {
@@ -312,14 +309,25 @@ public class DobbeltLenketListe<T> implements Liste<T>
     public void nullstill()
     {
         //Metode 1:
-        Node current = new Node(hent(0));            //Starter i hode.
-        hode = current;
+        Node current = hode;
+
         while(current.neste != null){
-            current.forrige=null;
-            hode = current;
+            hode = hode.neste;
+            current.forrige = null;
+
+            current = hode;
             endringer++;
         }
+        hale.neste = null;
+        hode.forrige = null;
+        hode = hale = null;
+        endringer++;
         antall = 0;
+
+
+
+
+      /*
         //metode 2:
        for (int i = 0; i < antall; i++){   //Går gjennom nodene.
             if (current.neste != null) {
@@ -327,7 +335,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
                 endringer++;                // Oppdaterer antall endringer i listen.
             }
             antall = 0;                     //Oppdaterer antall i listen.
-        }
+        }*/
     }
 
     @Override
@@ -440,7 +448,22 @@ public class DobbeltLenketListe<T> implements Liste<T>
         @Override
         public void remove()
         {
-            throw new UnsupportedOperationException("Ikke laget ennå!");
+            if (antall == 0){
+                throw new IllegalStateException("Det er ikke tillatt å kalle denne funksjonen nå!");
+            }
+
+            if (endringer != iteratorendringer){
+                throw new ConcurrentModificationException("Endringer og iteratorendringer er ikke like!");
+            }
+
+            fjernOK = false;
+
+            if (antall == 1){
+                hode = null;
+                hale = null;
+            }
+
+
         }
 
     } // DobbeltLenketListeIterator
