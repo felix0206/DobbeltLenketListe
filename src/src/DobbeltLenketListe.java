@@ -91,49 +91,49 @@ public class DobbeltLenketListe<T> implements Liste<T>
         //Finner antall elementer som ikke er null
         //Dersom tabellen bare har et element vil jeg bare legge til dette.
 
-        if(antallElementer == 1) {
-            leggTilFørste(a[0]);
-        }else{
+
            while (antallIkkeNulleElementer != antall()){
                leggTilFørste(a[j]);
                 j++;
-           }}
+           }
        }
 
 
     //legger til elementene i begynnelsen av listen
     public void leggTilFørste(T a) {
         if(a != null){
-        Node CurrentNode = new Node(a);
+        Node currentNode = new Node(a, hode, null);
         if(hode != null ) {
-            hode.neste = CurrentNode;
+            hode.forrige = currentNode;
         }
-        hode = CurrentNode;
+        hode = currentNode;
         if(hale == null) {
-            hale = CurrentNode;
+            hale = currentNode;
         }
             antall++;
+            System.out.println("La til element " + currentNode.verdi + " til " +antall + " plassering");
         }
+        System.out.println(a);
     }
 
     //legger til elementene i slutten av listen. Brukte denne til å legge til elementer både først og sist i liste, men fant ut at det ikke gikk noe raskere
-    public void leggTilSiste(T a) {
-        //Sjekker at verdien ikke = null
-        if(a != null){
-        //Instansierer node med verdi a og en nestepeker til halen
-        Node CurrentNode = new Node(a);
-      //Sjekker om hale sin verdi ikke er null, og setter hale.neste
-        if(hale != null) {
-            hale.forrige = CurrentNode;
-        }
-        hale = CurrentNode;
-        if(hode == null) {
-            hode = CurrentNode;
-        }
-        antall++;
-        }
-    }
-//
+//    public void leggTilSiste(T a) {
+//        //Sjekker at verdien ikke = null
+//        if(a != null){
+//        //Instansierer node med verdi a og en nestepeker til halen
+//        Node CurrentNode = new Node(a);
+//      //Sjekker om hale sin verdi ikke er null, og setter hale.neste
+//        if(hale != null) {
+//            hale.forrige = CurrentNode;
+//        }
+//        hale = CurrentNode;
+//        if(hode == null) {
+//            hode = CurrentNode;
+//        }
+//        antall++;
+//        }
+//    }
+////
 
 
 
@@ -338,26 +338,18 @@ public class DobbeltLenketListe<T> implements Liste<T>
     public String toString()
     {
         StringBuilder ut = new StringBuilder();
-
-        Node current = hode;
-
         if (hode == null){
-            return "[]";
-        }
-        if (current.neste == null){
-            ut.append(hode.verdi);
-            return "["+ut.toString()+"]";
-        }
-        ut.append("[");
-        while(current.neste!=null){
-            ut.append(current.verdi + ", ");
-            current= current.neste;
+            ut.append("[]");
+        }else {
+            Node current = hode;
+            ut.append("[");
+            ut.append(current.verdi);
+            current = current.neste;
 
-        }
-
-        if (hode!=hale){
-
-            ut.append(current.verdi) ;
+            while (current != null) {
+                ut.append(", " + current.verdi);
+                current = current.neste;
+            }
             ut.append("]");
         }
        return ut.toString();
