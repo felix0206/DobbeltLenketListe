@@ -79,31 +79,32 @@ public class DobbeltLenketListe<T> implements Liste<T>
         //Sjekker at tabellen ikke er null.
         Objects.requireNonNull(a, "Tabellen a er null!");
         int antallElementer = a.length;
+        int antallIkkeNulleElementer = 0;
+        int j = 0;
+
+        for (int i = 0; i < antallElementer; i++){
+            if(a[i] != null){
+                antallIkkeNulleElementer++;
+            }
+        }
+
+        //Finner antall elementer som ikke er null
         //Dersom tabellen bare har et element vil jeg bare legge til dette.
+
         if(antallElementer == 1) {
             leggTilFørste(a[0]);
         }else{
-            //Dersom elementene er partall legger jeg de inn i listen fra hver sin side av tabellen helt til alle er lagt til
-            //Usikker på om dette faktisk gjør den raskere men var gøy å prøve :P.
-       if(antallElementer % 2 == 0){
-       for(int i = 0; i < antallElementer/2; i++){
-        leggTilFørste(a[i]);
-        leggTilSiste(a[antallElementer-i-1]);
-       } }else{
-           //Dersom det er et oddetall av elementer fungerer ikke metoden over og jeg bruker derfor en alternativ metode for dette hvor jeg
-           // bare legger til elementer 1 og 1 fra begynnelsen av listen.
-           for(int i = 0; i < antallElementer; i++){
-               leggTilFørste(a[i]);
-           }
+           while (antallIkkeNulleElementer != antall()){
+               leggTilFørste(a[j]);
+                j++;
+           }}
        }
-       }
-    }
+
 
     //legger til elementene i begynnelsen av listen
     public void leggTilFørste(T a) {
         if(a != null){
         Node CurrentNode = new Node(a);
-        antall++;
         if(hode != null ) {
             hode.neste = CurrentNode;
         }
@@ -111,11 +112,11 @@ public class DobbeltLenketListe<T> implements Liste<T>
         if(hale == null) {
             hale = CurrentNode;
         }
-
+            antall++;
         }
     }
 
-    //legger til elementene i slutten av listen
+    //legger til elementene i slutten av listen. Brukte denne til å legge til elementer både først og sist i liste, men fant ut at det ikke gikk noe raskere
     public void leggTilSiste(T a) {
         //Sjekker at verdien ikke = null
         if(a != null){
@@ -129,9 +130,10 @@ public class DobbeltLenketListe<T> implements Liste<T>
         if(hode == null) {
             hode = CurrentNode;
         }
-        antall++;}
+        antall++;
+        }
     }
-
+//
 
 
 
@@ -254,7 +256,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public T hent(int indeks) {
         indeksKontroll(indeks, false);
-      return finnNode(indeks).verdi;
+        return finnNode(indeks).verdi;
     }
 
     @Override
