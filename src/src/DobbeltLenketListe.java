@@ -387,11 +387,9 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
     public static <T> void sorter(Liste<T> liste, Comparator<? super T> c)
     { // tester dette imrg vet ikke om det er i nærheten
-       /* for(int i = 0; i < liste.antall(); i++){
-            int start = liste[0];
-            int slutt = liste.antall()-1;
-        } */
-    }
+        DobbeltLenketListe liste2 = new DobbeltLenketListe();
+             //  liste2.hode.verdi < liste2.hode.neste
+           }
 
     @Override
     public Iterator<T> iterator()
@@ -401,7 +399,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
     public Iterator<T> iterator(int indeks)
     {
-        indeksKontroll(indeks, true);
+        indeksKontroll(indeks, false);
         return new DobbeltLenketListeIterator(indeks);
     }
 
@@ -441,9 +439,9 @@ public class DobbeltLenketListe<T> implements Liste<T>
                 throw new NoSuchElementException("ER IKKE FLERE IGJEN I LISTEN");
             }
             fjernOK = true;
+            T value = (T)this.denne.verdi;
             denne = denne.neste;
-            return denne.verdi;
-
+            return value;
         }
 
         @Override
