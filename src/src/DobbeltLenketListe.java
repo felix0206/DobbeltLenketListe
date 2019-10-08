@@ -107,9 +107,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
             hale = currentNode;
         }
             antall++;
-            System.out.println("La til element " + currentNode.verdi + " til " +antall + " plassering");
         }
-        System.out.println(a);
     }
 
     //legger til elementene i slutten av listen. Brukte denne til å legge til elementer både først og sist i liste, men fant ut at det ikke gikk noe raskere
@@ -141,7 +139,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
         DobbeltLenketListe<T> liste = new DobbeltLenketListe<>();
         for(int i = fra; i<til; i++){
             Node nyNode = finnNode(i);
-            liste.leggInn((T) nyNode.verdi);
+            liste.leggInn((T) nyNode);
         }
         return liste;
 
@@ -342,14 +340,15 @@ public class DobbeltLenketListe<T> implements Liste<T>
     public String toString()
     {
         StringBuilder ut = new StringBuilder();
-        if (hode == null){
+        Node current = hode;
+
+        if (current == null){
             ut.append("[]");
         }else {
-            Node current = hode;
+
             ut.append("[");
             ut.append(current.verdi);
             current = current.neste;
-
             while (current != null) {
                 ut.append(", " + current.verdi);
                 current = current.neste;
@@ -365,25 +364,19 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
         Node current = hale;
 
-        if (hale == null){
-            return "[]";
-        }
-        if (current.forrige == null){
-            ut.append(hale.verdi);
-            return "["+ut.toString()+"]";
-        }
-        ut.append("[");
-        while(current.forrige!=null){
+        if (current == null){
+            ut.append( "[]");
+        }else {
 
-            ut.append(current.verdi+", ");
-            current= current.forrige;
-
+            ut.append("[");
+            ut.append(current.verdi);
+            current = current.forrige;
+            while (current != null) {
+                ut.append(", " + current.verdi);
+                current = current.forrige;
+            }
+            ut.append("]");
         }
-
-        if (hode!=hale){
-            ut.append(""+current.verdi) ;
-        }
-        ut.append("]");
         return ut.toString();
     }
 
