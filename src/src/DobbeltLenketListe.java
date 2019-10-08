@@ -1,4 +1,3 @@
-import java.awt.*;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -315,17 +314,14 @@ public class DobbeltLenketListe<T> implements Liste<T>
         //Metode 1:
         Node current = new Node(hent(0));            //Starter i hode.
         hode = current;
-
-        for (int i = 0; i < antall; i++){
-                current.forrige = null;
-                endringer++;                // Oppdaterer antall endringer i listen.
-                if (i == antall){
-                    antall = 0;             //Oppdaterer antall i listen.
-                }
+        while(current.neste != null){
+            current.forrige=null;
+            hode = current;
+            endringer++;
         }
-
+        antall = 0;
         //metode 2:
-        for (int i = 0; i < antall; i++){   //Går gjennom nodene.
+       for (int i = 0; i < antall; i++){   //Går gjennom nodene.
             if (current.neste != null) {
                 fjern(i);                   //bruker metoden fjern for å slette en og en node.
                 endringer++;                // Oppdaterer antall endringer i listen.

@@ -1,4 +1,4 @@
-
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -20,10 +20,17 @@ public class Main {
 */
         Character[] c = {'A','B','C','D','E','F','G','H','I','J'};
         DobbeltLenketListe<Character> liste2 = new DobbeltLenketListe<>(c);
-        System.out.println(liste2.subliste(3,8));
-        System.out.println(liste2.subliste(5,5));
-        System.out.println(liste2.subliste(8,liste2.antall()));
+//        System.out.println(liste2.subliste(3,8));
+        //System.out.println(liste2.subliste(5,5));
+       // System.out.println(liste2.subliste(8,liste2.antall()));
         //System.out.println(liste2.subliste(0,11));
+
+        int liste[]  = {1,2,3,4,5};
+        System.out.println(Arrays.toString(liste));
+        liste2.nullstill();
+        System.out.println(Arrays.toString(liste));
+
+
     }
 
 }
