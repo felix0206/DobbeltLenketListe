@@ -443,6 +443,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
             fjernOK = true;
             denne = denne.neste;
             return denne.verdi;
+
         }
 
         @Override
