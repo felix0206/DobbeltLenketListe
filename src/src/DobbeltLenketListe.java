@@ -100,13 +100,13 @@ public class DobbeltLenketListe<T> implements Liste<T>
     //legger til elementene i begynnelsen av listen
     public void leggTilFørste(T a) {
         if(a != null){
-        Node CurrentNode = new Node(a);
+        Node currentNode = new Node(a, hode, null);
         if(hode != null ) {
-            hode.neste = CurrentNode;
-        }
-        hode = CurrentNode;
+            hode.neste = currentNode;
+        }else {hode = currentNode;}
+
         if(hale == null) {
-            hale = CurrentNode;
+            hale = currentNode;
         }
             antall++;
         }
@@ -139,7 +139,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
         fratilKontroll(antall, fra, til);
 
         DobbeltLenketListe<T> liste = new DobbeltLenketListe<>();
-        for(int i = fra; i<til; i++){
+        for(int i = fra; i <= til; i++){
             Node nyNode = finnNode(i);
             liste.leggInn((T) nyNode.verdi);
         }
