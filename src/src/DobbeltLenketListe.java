@@ -72,7 +72,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
         Node currentNode = new Node(a, hode, null);
         if(hode != null ) {
             hode.neste = currentNode;
-        }else {hode = currentNode;}
+        }else hode = currentNode;
 
         if(hale == null) {
             hale = currentNode;
@@ -158,10 +158,8 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
         //Tilfelle 1. tom liste
 
-        if (hode == null && hale == null){
-            Node nyNode = new Node(verdi);
-            nyNode.forrige = null;
-            nyNode.neste = null;
+        if (hode == null && hale == null && antall > 0){
+            Node nyNode = new Node(verdi, null, null);
             hale = nyNode;
             hode = nyNode;
             antall++;
@@ -172,13 +170,17 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
         //Tilfelle 2.
 
-        Node nyNode = new Node(verdi);
-        nyNode.forrige = hale;
-        nyNode.neste = null;
-        hale.neste = nyNode;
-        hale  = nyNode;
+        Node nyNode = new Node(verdi, hale, null);
+        if(hale != null){
+            hale.neste = nyNode;
+        }
+        hale = nyNode;
+        if (hode == null) {
+            hode = nyNode;
+        }
         antall++;
         endringer++;
+
 
         return true;
 
@@ -418,8 +420,8 @@ public boolean fjern(T verdi)
             hode.forrige = null;
         }
         else{
-            Node<T> p = finnNode(indeks - 1), r = p.neste;
-            curr = r.verdi;
+            Node p = finnNode(indeks - 1), r = p.neste;
+            curr = (T) r.verdi;
             if(r == hale){
                 hale = hale.forrige;
                 p.neste = null;
@@ -427,7 +429,7 @@ public boolean fjern(T verdi)
                 endringer++;
                 return curr;
             }
-            Node<T> q = r.neste;
+            Node q = r.forrige;
             p.neste = q;
             q.forrige = p;
             r.neste  = null;
@@ -564,7 +566,8 @@ public Iterator<T> iterator()
 
         if (liste.antall() != 1){
 
-            for (int j = liste.antall(); j > 0; j--){
+            int antall = liste.antall();
+            for (int j = antall; j < 0; j--){
                 Iterator<T> iterator = liste.iterator();    //Oppretter ny iterator hver iterasjon
                 int midlertidigMinste = 0;                  //Setter midlertidigMinste til 0.
                 T minsteVerdi = iterator.next();               //Setter midlertidig minsteverdi til første verdi i lenken.
