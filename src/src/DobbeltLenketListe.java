@@ -284,7 +284,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public int indeksTil(T verdi)
     {
-        if (verdi.equals(null)){
+        if (verdi == null){
             return -1;
         }
         Node<T> current = hode;
