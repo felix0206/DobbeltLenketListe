@@ -464,9 +464,9 @@ public class DobbeltLenketListe<T> implements Liste<T>
             int midlertidigMinste = 0;                  //Setter midlertidigMinste til 0.
             T minsteVerdi = iterator.next();               //Setter midlertidig minsteverdi til første verdi i lenken.
             for (int i = 1; i < j; i++){                //Itterer gjennom lenken frem til n
-                T verdi = iterator.next();              //Setter verdi lik neste verdi i lenken
+                T verdi = iterator.next();         //Setter verdi lik neste verdi i lenken
                 if (c.compare(verdi,minsteVerdi) < 0){     //Sammenligner minsteverdi med verdi for å se om verdi er mindre
-                    midlertidigMinste = i;
+                     midlertidigMinste = i;
                     minsteVerdi = verdi;                   //Dersom verdi er mindre blir minsteverdi oppdatert
                 }
             }

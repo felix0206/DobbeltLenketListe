@@ -14,3 +14,6 @@ Mikkel Gudmundsen, S325869, s325869@oslomet.no
 
 I denne oppgaven har vi hatt følgende arbeidsfordeling: 
 Vi har løst alle oppgavene sammen i "Sprinter", og diskutert løsningene i felleskap. 
+
+Abdi Hassen hadde sin mac på reperasjon, så han har jobbet i lag med Felix 
+Anthonessen. 
