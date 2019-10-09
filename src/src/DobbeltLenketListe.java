@@ -254,11 +254,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public boolean inneholder(T verdi)
     {
-       if (indeksTil(verdi) == -1){
-           return false;
-       } else {
-           return true;
-       }
+       return indeksTil(verdi) != -1;
     }
 
 
@@ -275,15 +271,19 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public int indeksTil(T verdi)
     {
-            Node current = hode;
+        if (verdi.equals(null)){
+            return -1;
+        }
+            Node<T> current = hode;
 
             for(int i = 0; i < antall; i++){
-                if(verdi.equals(current)){
+                if(current.verdi.equals(verdi)){
                     return i;
                 }
                 current = current.neste;
             }
         return -1;
+
     }
 
     @Override
