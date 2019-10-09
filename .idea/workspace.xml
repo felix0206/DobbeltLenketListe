@@ -38,14 +38,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/src/DobbeltLenketListe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="385" selection-start-line="385" selection-end-line="385" />
+            <state relative-caret-position="277">
+              <caret line="385" column="12" selection-start-line="385" selection-start-column="12" selection-end-line="385" selection-end-column="12" />
               <folding>
                 <element signature="e#4570#4571#0" expanded="true" />
                 <element signature="e#4599#4600#0" expanded="true" />
                 <element signature="e#6701#6702#0" expanded="true" />
                 <element signature="e#6743#6744#0" expanded="true" />
-                <element signature="e#13281#13282#0" expanded="true" />
+                <element signature="e#13303#13304#0" expanded="true" />
                 <element signature="e#14024#14025#0" expanded="true" />
                 <element signature="e#14102#14103#0" expanded="true" />
               </folding>
@@ -130,7 +130,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570623876978" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570624194932" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -235,22 +235,17 @@
       <option name="project" value="LOCAL" />
       <updated>1570622992135</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="--&gt; oppdatert oppg 6.">
+      <created>1570623916484</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1570623916484</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 13h 54m 13s.xml">
-      <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 14h 06m 57s.xml">
-      <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 14h 07m 01s.xml">
-      <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 14h 08m 47s.xml">
-      <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 14h 14m 03s.xml">
       <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
     </history-entry>
@@ -269,9 +264,21 @@
     <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 14h 24m 39s.xml">
       <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 14h 26m 41s.xml">
+      <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 14h 28m 07s.xml">
+      <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 14h 28m 27s.xml">
+      <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 14h 28m 39s.xml">
+      <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3902000" />
+    <option name="totallyTimeSpent" value="4190000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
@@ -356,7 +363,8 @@
     <MESSAGE value="--&gt; Oppgave 8 ferdig. Manglet nyNode.neste = null; i leggInn metoden!" />
     <MESSAGE value="--&gt; oppdatert readMe filen." />
     <MESSAGE value="--&gt; oppdatert oppg 4. en feil igjen." />
-    <option name="LAST_COMMIT_MESSAGE" value="--&gt; oppdatert oppg 4. en feil igjen." />
+    <MESSAGE value="--&gt; oppdatert oppg 6." />
+    <option name="LAST_COMMIT_MESSAGE" value="--&gt; oppdatert oppg 6." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -414,14 +422,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/src/DobbeltLenketListe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="385" selection-start-line="385" selection-end-line="385" />
+        <state relative-caret-position="277">
+          <caret line="385" column="12" selection-start-line="385" selection-start-column="12" selection-end-line="385" selection-end-column="12" />
           <folding>
             <element signature="e#4570#4571#0" expanded="true" />
             <element signature="e#4599#4600#0" expanded="true" />
             <element signature="e#6701#6702#0" expanded="true" />
             <element signature="e#6743#6744#0" expanded="true" />
-            <element signature="e#13281#13282#0" expanded="true" />
+            <element signature="e#13303#13304#0" expanded="true" />
             <element signature="e#14024#14025#0" expanded="true" />
             <element signature="e#14102#14103#0" expanded="true" />
           </folding>
