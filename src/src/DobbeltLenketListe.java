@@ -183,9 +183,11 @@ public class DobbeltLenketListe<T> implements Liste<T>
         if (hode == null && hale == null){
             Node nyNode = new Node(verdi);
             nyNode.forrige = null;
+            nyNode.neste = null;
             hale = nyNode;
             hode = nyNode;
             antall++;
+            endringer++;
 
             return true;
         }
@@ -198,6 +200,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
         hale.neste = nyNode;
         hale  = nyNode;
         antall++;
+        endringer++;
 
         return true;
 
@@ -308,23 +311,45 @@ public class DobbeltLenketListe<T> implements Liste<T>
     public boolean fjern(T verdi)
     {
         if (verdi != null){
-        int teller = 0;
-        Node hentetVerdi = finnNode(teller);
 
-        while (teller != antall){
-          if (verdi == hentetVerdi){
-              Node hentetverdiSinForrige = finnNode(teller-1);
-              Node hentetverdiSinNeste = finnNode(teller+1);
+            if(verdi == null) {
+                return false;
+            }
+            Node<T> p = hode;
+            Node<T> q = null;
+            Node<T> r = null;
 
-              hentetverdiSinForrige.neste = hentetVerdi.neste;
-              hentetverdiSinNeste.forrige = hentetVerdi.forrige;
-              hentetVerdi.forrige = null;
-              hentetVerdi.neste = null;
-              antall--;
-              return true;
-          }
-            teller++;
-        }}
+            while (p != null){
+                if(p.verdi.equals(verdi)) break;
+                r = p;
+                p = p.neste;
+            }
+            if(p == null) return false;
+            if(antall == 1){
+                hode = hale = null;
+                antall--;
+                return true;
+            }
+            if(p == hode){
+                hode = hode.neste;
+                hode.forrige = null;
+            }
+            else if(p == hale){
+                hale = hale.forrige;
+                hale.neste = null;
+            }
+            else{
+                q = r;
+                r = p;
+                p = p.neste;
+                q.neste = p;
+                p.forrige = q;
+                r.neste = r.forrige = null;
+            }
+            antall--;
+            endringer++;
+            return true;
+        }
         return false;
     }
 
@@ -515,8 +540,30 @@ public class DobbeltLenketListe<T> implements Liste<T>
                 throw new ConcurrentModificationException("Endringer og iteratorendringer er ikke like!");
             }
 
-
+            fjernOK = false;
+            if(antall == 1){
+                hode = null;
+                hale = hode;
+            }
+            else if(denne == null){
+                hale = hale.forrige;
+                hale.neste = null;
+            }
+            else if(denne.forrige == hode){
+                hode = hode.neste;
+                hode.forrige = null;
+            }
+            else{
+                Node<T> p = denne;
+                Node<T> q = denne.forrige.forrige;
+                p.forrige = q;
+                q.neste = p;
+            }
+            antall--;
+            endringer++;
+            iteratorendringer++;
         }
+
 
     } // DobbeltLenketListeIterator
 
