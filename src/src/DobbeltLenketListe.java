@@ -356,31 +356,39 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public T fjern(int indeks)
     {
+        T curr;
+        indeksKontroll(indeks, false);
 
-        if (indeks > antall || indeks < 0){
-            throw new IndexOutOfBoundsException("ups! something went wrong here");
-        }
-
-        Node curr = finnNode(indeks);
-        if(curr != null){
-        if (indeks == 0){
-            curr = hode;
+        curr = hode.verdi;
+        if(indeks == 0){
+            curr = hode.verdi;
+            if(antall == 1){
+                hode = hale = null;
+                endringer++;
+                antall --;
+                return curr;
+            }
             hode = hode.neste;
             hode.forrige = null;
-            antall--;
-            endringer++;
-        }else {
-        Node currentSinForrigeNode =  finnNode(indeks-1);
-        Node currenSinNeste = finnNode(indeks+1);
-
-        currentSinForrigeNode.neste = curr.neste;
-        currenSinNeste.forrige = curr.forrige;
-        curr.neste = null;
-        curr.forrige = null;
-        antall--;
+        }
+        else{
+            Node<T> p = finnNode(indeks - 1), r = p.neste;
+            curr = r.verdi;
+            if(r == hale){
+                hale = hale.forrige;
+                p.neste = null;
+                antall--;
+                endringer++;
+                return curr;
+            }
+            Node<T> q = r.neste;
+            p.neste = q;
+            q.forrige = p;
+            r.neste = r.forrige = null;
+        }
         endringer++;
-        } }
-        return (T) curr.verdi;
+        antall--;
+        return curr;
     }
 
 //         Oppgave 7

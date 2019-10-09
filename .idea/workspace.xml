@@ -26,8 +26,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/src/DobbeltLenketListeTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1896">
-              <caret line="1270" selection-start-line="1270" selection-end-line="1270" />
+            <state relative-caret-position="145">
+              <caret line="701" selection-start-line="701" selection-end-line="701" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -35,28 +35,30 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/src/DobbeltLenketListe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="527" column="30" lean-forward="true" selection-start-line="527" selection-start-column="30" selection-end-line="527" selection-end-column="30" />
+            <state relative-caret-position="443">
+              <caret line="385" selection-start-line="385" selection-end-line="385" />
               <folding>
                 <element signature="e#4570#4571#0" expanded="true" />
                 <element signature="e#4599#4600#0" expanded="true" />
-                <element signature="e#13135#13136#0" expanded="true" />
-                <element signature="e#14264#14265#0" expanded="true" />
-                <element signature="e#14342#14343#0" expanded="true" />
+                <element signature="e#6701#6702#0" expanded="true" />
+                <element signature="e#6743#6744#0" expanded="true" />
+                <element signature="e#13281#13282#0" expanded="true" />
+                <element signature="e#14024#14025#0" expanded="true" />
+                <element signature="e#14102#14103#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="225">
-                <caret line="15" column="85" lean-forward="true" selection-start-line="15" selection-start-column="85" selection-end-line="15" selection-end-column="85" />
+              <first_editor relative-caret-position="270">
+                <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
               </first_editor>
               <second_editor />
             </state>
@@ -70,6 +72,9 @@
       <find>legginn</find>
       <find>leggInn(T</find>
       <find>sorter</find>
+      <find>indeksTil</find>
+      <find>fjern(int</find>
+      <find>sort</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -79,8 +84,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/src/DobbeltLenketListeTest.java" />
-        <option value="$PROJECT_DIR$/src/src/DobbeltLenketListe.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/src/DobbeltLenketListe.java" />
       </list>
     </option>
   </component>
@@ -125,7 +130,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570619908295" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570623876978" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -216,46 +221,61 @@
       <option name="project" value="LOCAL" />
       <updated>1570620985035</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="--&gt; oppdatert readMe filen.">
+      <created>1570622559559</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1570622559559</updated>
+    </task>
+    <task id="LOCAL-00007" summary="--&gt; oppdatert oppg 4. en feil igjen.">
+      <created>1570622992135</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1570622992135</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 13h 06m 18s.xml">
-      <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 13h 21m 31s.xml">
-      <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 13h 24m 57s.xml">
-      <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 13h 27m 03s.xml">
-      <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 13h 28m 06s.xml">
-      <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 13h 32m 41s.xml">
-      <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 13h 35m 22s.xml">
-      <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 13h 50m 34s.xml">
-      <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 13h 50m 45s.xml">
-      <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 13h 54m 13s.xml">
+      <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 14h 06m 57s.xml">
+      <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 14h 07m 01s.xml">
+      <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 14h 08m 47s.xml">
+      <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 14h 14m 03s.xml">
+      <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 14h 14m 34s.xml">
+      <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 14h 15m 23s.xml">
+      <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 14h 18m 37s.xml">
+      <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 14h 20m 10s.xml">
+      <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 14h 24m 39s.xml">
       <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2407000" />
+    <option name="totallyTimeSpent" value="3902000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -267,15 +287,15 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37961784" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.36438355" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.37961784" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.36433122" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32876712" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="DB Execution Console" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" weight="0.37961784" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3299363" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32876712" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -334,7 +354,9 @@
     <MESSAGE value="- Fixed finnNode() method and tried to fix hent() method in oppgave 3" />
     <MESSAGE value="--&gt; oppg 10. Feil i test, men tror det er pga. en av de andre oppgavene!" />
     <MESSAGE value="--&gt; Oppgave 8 ferdig. Manglet nyNode.neste = null; i leggInn metoden!" />
-    <option name="LAST_COMMIT_MESSAGE" value="--&gt; Oppgave 8 ferdig. Manglet nyNode.neste = null; i leggInn metoden!" />
+    <MESSAGE value="--&gt; oppdatert readMe filen." />
+    <MESSAGE value="--&gt; oppdatert oppg 4. en feil igjen." />
+    <option name="LAST_COMMIT_MESSAGE" value="--&gt; oppdatert oppg 4. en feil igjen." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -370,10 +392,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="270">
+            <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/src/DobbeltLenketListeTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1896">
-          <caret line="1270" selection-start-line="1270" selection-end-line="1270" />
+        <state relative-caret-position="145">
+          <caret line="701" selection-start-line="701" selection-end-line="701" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -382,25 +414,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/src/DobbeltLenketListe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="527" column="30" lean-forward="true" selection-start-line="527" selection-start-column="30" selection-end-line="527" selection-end-column="30" />
+        <state relative-caret-position="443">
+          <caret line="385" selection-start-line="385" selection-end-line="385" />
           <folding>
             <element signature="e#4570#4571#0" expanded="true" />
             <element signature="e#4599#4600#0" expanded="true" />
-            <element signature="e#13135#13136#0" expanded="true" />
-            <element signature="e#14264#14265#0" expanded="true" />
-            <element signature="e#14342#14343#0" expanded="true" />
+            <element signature="e#6701#6702#0" expanded="true" />
+            <element signature="e#6743#6744#0" expanded="true" />
+            <element signature="e#13281#13282#0" expanded="true" />
+            <element signature="e#14024#14025#0" expanded="true" />
+            <element signature="e#14102#14103#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="225">
-            <caret line="15" column="85" lean-forward="true" selection-start-line="15" selection-start-column="85" selection-end-line="15" selection-end-column="85" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
