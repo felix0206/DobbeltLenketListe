@@ -265,8 +265,8 @@ public class DobbeltLenketListe<T> implements Liste<T>
         if(indeks < 0){
             throw new IndexOutOfBoundsException("");
         }
-        Node<T> nodeVerdiMedIndex = finnNode(indeks);
-        return  nodeVerdiMedIndex.verdi;
+        T nodeVerdiMedIndex = finnNode(indeks).verdi;
+        return  nodeVerdiMedIndex;
     }
 
     @Override
@@ -293,10 +293,9 @@ public class DobbeltLenketListe<T> implements Liste<T>
         //Setter objektet til indeksen i gitt posisjon til en oldNodeValue.
         Node<T> oldNodeValue = finnNode(indeks);
         //Legger til den nye verdien til listen.
+        fjern(oldNodeValue.verdi);
         leggInn(indeks, nyverdi);
-        antall++;
         //Fjerner denne verdien med metoden fjern
-        fjern(indeks);
         //plusser på antall endringer
         endringer++;
         //Returnerer den gamle verdien.
@@ -304,15 +303,16 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
     }
 
+    //oppgave 7
     @Override
     public boolean fjern(T verdi)
     {
+        if (verdi != null){
         int teller = 0;
         Node hentetVerdi = finnNode(teller);
+
         while (teller != antall){
-
           if (verdi == hentetVerdi){
-
               Node hentetverdiSinForrige = finnNode(teller-1);
               Node hentetverdiSinNeste = finnNode(teller+1);
 
@@ -324,24 +324,27 @@ public class DobbeltLenketListe<T> implements Liste<T>
               return true;
           }
             teller++;
-        }
+        }}
         return false;
     }
 
     @Override
     public T fjern(int indeks)
     {
+
         if (indeks > antall || indeks < 0){
             throw new IndexOutOfBoundsException("ups! something went wrong here");
         }
-       T  returneringsverdi = hent(indeks);
+
+        Node curr = finnNode(indeks);
+        if(curr != null){
         if (indeks == 0){
-            Node curr = hode;
+            curr = hode;
             hode = hode.neste;
             hode.forrige = null;
             antall--;
+            endringer++;
         }else {
-            Node curr = finnNode(indeks);
         Node currentSinForrigeNode =  finnNode(indeks-1);
         Node currenSinNeste = finnNode(indeks+1);
 
@@ -350,10 +353,12 @@ public class DobbeltLenketListe<T> implements Liste<T>
         curr.neste = null;
         curr.forrige = null;
         antall--;
-        }
-        return  returneringsverdi;
+        endringer++;
+        } }
+        return (T) curr.verdi;
     }
 
+//         Oppgave 7
     @Override
     public void nullstill()
     {
