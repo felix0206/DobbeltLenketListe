@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb51b032-8ef0-4a5e-bc30-5a7ff735aad7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/src/DobbeltLenketListe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/DobbeltLenketListe.java" afterDir="false" />
     </list>
@@ -12,13 +13,37 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1146531391">
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="6" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/src/Main.java">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/src/DobbeltLenketListe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+            <state relative-caret-position="324">
+              <caret line="580" column="5" selection-start-line="580" selection-start-column="5" selection-end-line="580" selection-end-column="5" />
+              <folding>
+                <element signature="e#2905#2906#0" expanded="true" />
+                <element signature="e#2934#2935#0" expanded="true" />
+                <element signature="e#6701#6702#0" expanded="true" />
+                <element signature="e#6745#6746#0" expanded="true" />
+                <element signature="e#11377#11378#0" expanded="true" />
+                <element signature="e#11432#11433#0" expanded="true" />
+                <element signature="e#12301#12302#0" expanded="true" />
+                <element signature="e#12379#12380#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -26,8 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/src/DobbeltLenketListeTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="701" selection-start-line="701" selection-end-line="701" />
+            <state relative-caret-position="-2285">
+              <caret line="371" selection-start-line="371" selection-end-line="371" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -35,32 +60,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/src/DobbeltLenketListe.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/src/Liste.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="385" column="12" selection-start-line="385" selection-start-column="12" selection-end-line="385" selection-end-column="12" />
-              <folding>
-                <element signature="e#4570#4571#0" expanded="true" />
-                <element signature="e#4599#4600#0" expanded="true" />
-                <element signature="e#6701#6702#0" expanded="true" />
-                <element signature="e#6743#6744#0" expanded="true" />
-                <element signature="e#13303#13304#0" expanded="true" />
-                <element signature="e#14024#14025#0" expanded="true" />
-                <element signature="e#14102#14103#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="48">
+              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="270">
-                <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-              </first_editor>
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/src/src/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -103,17 +116,11 @@
         <subPane>
           <expand>
             <path>
-              <item name="DobbeltLenketListe2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DobbeltLenketListe2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DobbeltLenketListe2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DobbeltLenketListe2" type="462c0819:PsiDirectoryNode" />
+              <item name="DobbeltLenketListe" type="b2602c69:ProjectViewProjectNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="DobbeltLenketListe2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DobbeltLenketListe2" type="462c0819:PsiDirectoryNode" />
+              <item name="DobbeltLenketListe" type="b2602c69:ProjectViewProjectNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -130,7 +137,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570624194932" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570625705372" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -246,9 +253,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 14h 14m 03s.xml">
-      <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 14h 14m 34s.xml">
       <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
     </history-entry>
@@ -276,15 +280,18 @@
     <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 14h 28m 39s.xml">
       <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="DobbeltLenketListeTest - 2019.10.09 at 14h 53m 48s.xml">
+      <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="4190000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="0" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18497577" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -294,7 +301,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.37961784" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.42054793" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.36433122" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -340,20 +347,6 @@
         </entry>
       </map>
     </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Somehow my toString method was written over, Remade it, and it's back. Now it's time for debug." />
@@ -388,15 +381,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/src/Liste.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="48">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+        <state relative-caret-position="228">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
@@ -412,8 +405,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/src/DobbeltLenketListeTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="701" selection-start-line="701" selection-end-line="701" />
+        <state relative-caret-position="-2285">
+          <caret line="371" selection-start-line="371" selection-end-line="371" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -422,16 +415,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/src/DobbeltLenketListe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="385" column="12" selection-start-line="385" selection-start-column="12" selection-end-line="385" selection-end-column="12" />
+        <state relative-caret-position="324">
+          <caret line="580" column="5" selection-start-line="580" selection-start-column="5" selection-end-line="580" selection-end-column="5" />
           <folding>
-            <element signature="e#4570#4571#0" expanded="true" />
-            <element signature="e#4599#4600#0" expanded="true" />
+            <element signature="e#2905#2906#0" expanded="true" />
+            <element signature="e#2934#2935#0" expanded="true" />
             <element signature="e#6701#6702#0" expanded="true" />
-            <element signature="e#6743#6744#0" expanded="true" />
-            <element signature="e#13303#13304#0" expanded="true" />
-            <element signature="e#14024#14025#0" expanded="true" />
-            <element signature="e#14102#14103#0" expanded="true" />
+            <element signature="e#6745#6746#0" expanded="true" />
+            <element signature="e#11377#11378#0" expanded="true" />
+            <element signature="e#11432#11433#0" expanded="true" />
+            <element signature="e#12301#12302#0" expanded="true" />
+            <element signature="e#12379#12380#0" expanded="true" />
           </folding>
         </state>
       </provider>
