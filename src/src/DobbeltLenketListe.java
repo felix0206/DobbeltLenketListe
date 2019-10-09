@@ -455,19 +455,24 @@ public class DobbeltLenketListe<T> implements Liste<T>
     }
 
     public static <T> void sorter(Liste<T> liste, Comparator<? super T> c)
-    { // fått litt hjelp av andre, men må fikses mer på
-        Iterator<T> iterator = liste.iterator();
-        int m = 0;
-        T smallValue = iterator.next();
-        for(int i = 0; i < liste.antall(); i++){
-            T value = iterator.next();
-            if(c.compare(value, smallValue) < 0){
-                m = i;
-                smallValue = value;
-            }
-        }
+    {
 
-        liste.leggInn(liste.fjern(m));
+        if (liste.antall() != 1){
+
+        for (int j = liste.antall(); j > 0; j--){
+            Iterator<T> iterator = liste.iterator();    //Oppretter ny iterator hver iterasjon
+            int midlertidigMinste = 0;                  //Setter midlertidigMinste til 0.
+            T minsteVerdi = iterator.next();               //Setter midlertidig minsteverdi til første verdi i lenken.
+            for (int i = 1; i < j; i++){                //Itterer gjennom lenken frem til n
+                T verdi = iterator.next();              //Setter verdi lik neste verdi i lenken
+                if (c.compare(verdi,minsteVerdi) < 0){     //Sammenligner minsteverdi med verdi for å se om verdi er mindre
+                    midlertidigMinste = i;
+                    minsteVerdi = verdi;                   //Dersom verdi er mindre blir minsteverdi oppdatert
+                }
+            }
+            liste.leggInn(liste.fjern(midlertidigMinste));  //Fjerner minste verdien fra lista og legger den til bakerst.
+        }
+    }
            }
 
     @Override
@@ -514,13 +519,13 @@ public class DobbeltLenketListe<T> implements Liste<T>
             if(iteratorendringer != endringer){
                 throw new ConcurrentModificationException("ER IKKE LIK");
             }
-            if(hasNext() != true) {
+            if(!hasNext()) {
                 throw new NoSuchElementException("ER IKKE FLERE IGJEN I LISTEN");
             }
+            T denneVerdi = denne.verdi;
             fjernOK = true;
-            T value = denne.verdi;
             denne = denne.neste;  // itereres igjennom lista
-            return value;
+            return denneVerdi;
         }
 
         @Override
