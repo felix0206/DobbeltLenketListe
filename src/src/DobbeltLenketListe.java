@@ -404,40 +404,39 @@ public boolean fjern(T verdi)
     @Override
     public T fjern(int indeks)
     {
-        T curr;
-        indeksKontroll(indeks, false);
 
-        curr = hode.verdi;
+        indeksKontroll(indeks, false);
+        Node c = finnNode(indeks);
+
         if(indeks == 0){
-            curr = hode.verdi;
+         Node curr = hode;
             if(antall == 1){
                 hode = hale = null;
                 endringer++;
                 antall --;
-                return curr;
+                return (T) curr.verdi;
             }
             hode = hode.neste;
             hode.forrige = null;
         }
         else{
             Node p = finnNode(indeks - 1), r = p.neste;
-            curr = (T) r.verdi;
+
             if(r == hale){
                 hale = hale.forrige;
                 p.neste = null;
                 antall--;
                 endringer++;
-                return curr;
+                return (T) c.verdi;
             }
-            Node q = r.forrige;
+            Node q = c;
             p.neste = q;
             q.forrige = p;
-            r.neste  = null;
-            r.forrige = r.neste;
+            r.forrige = q;
         }
         endringer++;
         antall--;
-        return curr;
+        return (T) c.verdi;
     }
 
 
