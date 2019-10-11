@@ -175,20 +175,23 @@ public class DobbeltLenketListe<T> implements Liste<T>
         Objects.requireNonNull(verdi,"Nullverdier er ikke tillatt!");
 
 
+
 //            Setter inn noden dersom verd
             if(tom()) {
 //                Instansierer node til å bli hale
-                Node currentNode = new Node(verdi, hale, null);
+                Node currentNode = new Node(verdi, hode, null);
                 hale = currentNode;
-                hode = currentNode;
-            }else {
+                if (hode == null) {
+                    hode = currentNode;
+                }
+            }else if(antall == 1){
+                Node currentNode = new Node(verdi, hode, null);
+                hale = currentNode;
+                hode.neste = hale;
+            }else  {
 //               Instansierer den nye noden til å bli halen med neste peker== null
                 Node current = new Node(verdi, hale, null);
-                if(hale != null){
                 hale.neste = current;
-                }if (hode == null){
-                    hode= current;
-                }
                 hale = current;
             }
         antall++;
@@ -359,9 +362,18 @@ public boolean fjern(T verdi) {
         return false;
     }
 
+    if (antall == 1){
+        hode = null;
+        hale = null;
+        antall--;
+        endringer++;
+        return true;
+    }
+
 //    Om verdien == hode sin verdi sletter jeg hode og setter neste element til hode.
     if (hode.verdi.equals(verdi)) {
         hode = hode.neste;
+        hode.forrige = null;
         antall--;
         endringer++;
         return true;
@@ -376,7 +388,7 @@ public boolean fjern(T verdi) {
     }
 //        Om noden ligger mellem hode og hale
         //       Finner node med verdi = ønsket slettes sin verdi.
-        Node current = finnNodeMedVerdi(verdi);
+        Node current= finnNodeMedVerdi(verdi);
 //        Sjekker om noden faktisk finnes i listen. for dersom den ikke gjør det vil finnNodemedveradi gi at current.neste = null
         if (current.neste == null){
 //           Er dessverre ikke mye jeg kan gjøre når du vil fjerne noe som ikke eksisterer
@@ -392,7 +404,7 @@ public boolean fjern(T verdi) {
     private Node finnNodeMedVerdi(T verdi){
         Node current = hode;
 //       Finner node med verdi = ønsket slettet sin verdi.
-        while (current.verdi != verdi && current.neste != null) {
+        while (!current.verdi.equals(verdi) && current.neste != null) {
             current = current.neste;
         }
         return current;
@@ -406,20 +418,27 @@ public boolean fjern(T verdi) {
             throw new IndexOutOfBoundsException("The index " + indeks + " is out of bounds.");
         }
         if (tom()) {
-            System.out.println("List is empty");
-            return finnNode(indeks).verdi;
+            throw new NoSuchElementException("Det finnes ingen liste å fjerne fra");
         }
 
+        if(antall == 1){
+            Node current = hode;
+            hode = null;
+            hale = null;
+            antall--;
+            endringer++;
+            return (T) current.verdi;
+        }
         //Looper gjennom listen til gitt indeks.
         Node current = finnNode(indeks);
         //Om curr.forrige == null => curr == hode.
-        if (current.forrige == null) {
+        if (current.equals(hode)) {
             //Setter sin neste node sin forrigepeker til null
             current.neste.forrige = null;
             //Setter hode til å være den neste noden i listen.
             hode = current.neste;
 //            ellers, om current.neste er null dvs at man skal slette halen
-        }else if (current == hale) {
+        }else if (current.equals(hale)) {
             hale = hale.forrige;
             hale.neste = null;
         } else {
