@@ -831,7 +831,7 @@ class DobbeltLenketListeTest {
             antallFeil++;
         }
 
-        liste.leggInn("A");
+         liste.leggInn("A");
 
         try {
             liste.fjern("A");

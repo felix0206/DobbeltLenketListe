@@ -322,18 +322,16 @@ public class DobbeltLenketListe<T> implements Liste<T>
         Objects.requireNonNull(verdi);
         indeksKontroll(indeks,true);
 
-        if(indeks > antall-1){
-            throw new IndexOutOfBoundsException("");
-        }
-        if(indeks == 0){
+        if (tom()) {
             leggTilFørste(verdi);
             endringer++;
-        }else{
-         if(indeks == antall-1){
+        }else if(indeks == antall){
             leggInn(verdi);
             endringer++;
-        }
-        else{
+     }else if(indeks == 0){
+            leggTilFørste(verdi);
+            endringer++;
+        } else{
              Node gamleNode = finnNode(indeks);
 //          Finner verdien som er på plasseringen til den gamle verdien som ligger på plasseringen der vi ønsker å legge til vår nye node.
 //         Instansierer Nodene p,q og r. Der jeg vil legge q etter p = curr og r = curr skal ligge etter noden. q skal legges inn i mitten av de 2 nodene.
@@ -347,7 +345,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
              endringer++;
              antall++;
         }}
-    }
+
 
 // Oppgave 6
 
@@ -573,16 +571,13 @@ public Iterator<T> iterator()
 
     public static <T> void sorter(Liste<T> liste, Comparator<? super T> c)
     {
-
         if (liste.antall() != 1){
-
-            int antall = liste.antall();
-            for (int j = antall; j < 0; j--){
+            for (int j = liste.antall(); j > 0; j--){
                 Iterator<T> iterator = liste.iterator();    //Oppretter ny iterator hver iterasjon
                 int midlertidigMinste = 0;                  //Setter midlertidigMinste til 0.
                 T minsteVerdi = iterator.next();               //Setter midlertidig minsteverdi til første verdi i lenken.
                 for (int i = 1; i < j; i++){                //Itterer gjennom lenken frem til n
-                    T verdi = iterator.next();         //Setter verdi lik neste verdi i lenken
+                    T verdi = iterator.next();              //Setter verdi lik neste verdi i lenken
                     if (c.compare(verdi,minsteVerdi) < 0){     //Sammenligner minsteverdi med verdi for å se om verdi er mindre
                         midlertidigMinste = i;
                         minsteVerdi = verdi;                   //Dersom verdi er mindre blir minsteverdi oppdatert
@@ -590,12 +585,7 @@ public Iterator<T> iterator()
                 }
                 liste.leggInn(liste.fjern(midlertidigMinste));  //Fjerner minste verdien fra lista og legger den til bakerst.
             }
+            }
         }
-    }
-
-
-
-
-
 } // DobbeltLenketListe
 

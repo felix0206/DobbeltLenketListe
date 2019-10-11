@@ -4,6 +4,7 @@
     <list default="true" id="bb51b032-8ef0-4a5e-bc30-5a7ff735aad7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/src/DobbeltLenketListe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/DobbeltLenketListe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/DobbeltLenketListeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/DobbeltLenketListeTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,26 +17,26 @@
     <session id="-1146531391">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="6375" />
-          <entry key="txt" value="939" />
+          <entry key="java" value="6764" />
+          <entry key="txt" value="1111" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6375" />
-          <entry key="PLAIN_TEXT" value="939" />
+          <entry key="JAVA" value="6764" />
+          <entry key="PLAIN_TEXT" value="1111" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="1" />
-          <entry key="java" value="1" />
+          <entry key="class" value="2" />
+          <entry key="java" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="1" />
+          <entry key="CLASS" value="2" />
+          <entry key="JAVA" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -48,19 +49,41 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/src/DobbeltLenketListe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="428" column="24" selection-start-line="428" selection-start-column="24" selection-end-line="428" selection-end-column="24" />
+            <state relative-caret-position="203">
+              <caret line="589" selection-start-line="589" selection-end-line="589" />
               <folding>
-                <element signature="e#2657#2658#0" expanded="true" />
-                <element signature="e#2686#2687#0" expanded="true" />
-                <element signature="e#8289#8290#0" expanded="true" />
-                <element signature="e#8333#8334#0" expanded="true" />
-                <element signature="e#12916#12917#0" expanded="true" />
-                <element signature="e#12963#12964#0" expanded="true" />
+                <element signature="e#2705#2706#0" expanded="true" />
+                <element signature="e#2734#2735#0" expanded="true" />
+                <element signature="e#13373#13374#0" expanded="true" />
+                <element signature="e#13420#13421#0" expanded="true" />
+                <element signature="e#14239#14240#0" expanded="true" />
+                <element signature="e#14317#14318#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/openjdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/util/Comparator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+              <caret line="149" column="8" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/openjdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Integer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="199">
+              <caret line="1225" selection-start-line="1225" selection-end-line="1225" />
+              <folding>
+                <element signature="e#45687#45688#0" expanded="true" />
+                <element signature="e#45715#45716#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -69,8 +92,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/src/DobbeltLenketListeTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="833" selection-start-line="833" selection-end-line="833" />
+            <state relative-caret-position="-18849">
+              <caret line="140" column="9" selection-start-line="140" selection-start-column="9" selection-end-line="140" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,8 +104,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/src/Liste.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="136">
+              <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -90,7 +113,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
+            <state>
               <caret line="19" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
@@ -117,13 +140,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/src/DobbeltLenketListeTest.java" />
         <option value="$PROJECT_DIR$/src/src/Liste.java" />
+        <option value="$PROJECT_DIR$/src/src/DobbeltLenketListeTest.java" />
         <option value="$PROJECT_DIR$/src/src/DobbeltLenketListe.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1280" />
     <option name="height" value="800" />
   </component>
@@ -158,7 +181,8 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570781380291" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570828981875" />
+    <property name="full.screen.before.presentation.mode" value="true" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -305,38 +329,45 @@
       <option name="project" value="LOCAL" />
       <updated>1570750999955</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="--&gt; Nå fungerer også oppgave 6 som den skal etter 3 timers debugging :´).">
+      <created>1570781484717</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1570781484717</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DobbeltLenketListeTest - 2019.10.11 at 09h 46m 51s.xml">
+    <history-entry file="DobbeltLenketListeTest - 2019.10.11 at 22h 48m 45s.xml">
       <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DobbeltLenketListeTest - 2019.10.11 at 09h 51m 24s.xml">
+    <history-entry file="DobbeltLenketListeTest - 2019.10.11 at 22h 50m 04s.xml">
       <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DobbeltLenketListeTest - 2019.10.11 at 09h 54m 17s.xml">
+    <history-entry file="DobbeltLenketListeTest - 2019.10.11 at 22h 53m 14s.xml">
       <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DobbeltLenketListeTest - 2019.10.11 at 09h 59m 20s.xml">
+    <history-entry file="DobbeltLenketListeTest - 2019.10.11 at 22h 56m 29s.xml">
       <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DobbeltLenketListeTest - 2019.10.11 at 10h 02m 25s.xml">
+    <history-entry file="DobbeltLenketListeTest - 2019.10.11 at 22h 57m 43s.xml">
       <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DobbeltLenketListeTest - 2019.10.11 at 10h 02m 33s.xml">
+    <history-entry file="DobbeltLenketListeTest - 2019.10.11 at 22h 59m 51s.xml">
       <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DobbeltLenketListeTest - 2019.10.11 at 10h 06m 02s.xml">
+    <history-entry file="DobbeltLenketListeTest - 2019.10.11 at 23h 00m 43s.xml">
       <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DobbeltLenketListeTest - 2019.10.11 at 10h 06m 31s.xml">
+    <history-entry file="DobbeltLenketListeTest - 2019.10.11 at 23h 02m 26s.xml">
       <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DobbeltLenketListeTest - 2019.10.11 at 10h 06m 52s.xml">
+    <history-entry file="DobbeltLenketListeTest - 2019.10.11 at 23h 21m 53s.xml">
       <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DobbeltLenketListeTest - 2019.10.11 at 10h 08m 36s.xml">
+    <history-entry file="DobbeltLenketListeTest - 2019.10.11 at 23h 22m 17s.xml">
       <configuration name="DobbeltLenketListeTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -344,10 +375,10 @@
     <option name="totallyTimeSpent" value="4190000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18739903" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.12353568" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -357,8 +388,39 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" weight="0.42054793" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.36301368" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.42054793" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.36164382" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32876712" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="DB Execution Console" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" weight="0.37961784" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.3299363" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32739726" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12353568" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="DB Browser" order="6" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.30396038" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.36301368" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -376,7 +438,7 @@
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -421,7 +483,8 @@
     <MESSAGE value="--&gt; Finpusset legg inn metode for å fikse spesialtilfelle der hode eller hale var null, men ikke beggge." />
     <MESSAGE value="--&gt; Ingen rødefeilmeldinger da 6 nå er brutt opp litt.&#10;- trenger å orde opp i loggistikken så skal den fungrere" />
     <MESSAGE value="--&gt; Klarte ikke la være å justere litt på prosjektet ;).&#10;- Skrev om neste alle metodene i 1, 2, 3, 5 og 6. &#10;- Trenger å se litt mere på pekerne til oppgave 6. Finner ikke feilen med det første, men etter mange timer debugging skal jeg nok klare det. &#10;- God natt :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="--&gt; Klarte ikke la være å justere litt på prosjektet ;).&#10;- Skrev om neste alle metodene i 1, 2, 3, 5 og 6. &#10;- Trenger å se litt mere på pekerne til oppgave 6. Finner ikke feilen med det første, men etter mange timer debugging skal jeg nok klare det. &#10;- God natt :)" />
+    <MESSAGE value="--&gt; Nå fungerer også oppgave 6 som den skal etter 3 timers debugging :´)." />
+    <option name="LAST_COMMIT_MESSAGE" value="--&gt; Nå fungerer også oppgave 6 som den skal etter 3 timers debugging :´)." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -444,6 +507,12 @@
           <properties />
           <option name="timeStamp" value="75" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/src/DobbeltLenketListeTest.java</url>
+          <line>622</line>
+          <properties />
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -458,6 +527,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/openjdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Throwable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="492" column="18" selection-start-line="492" selection-start-column="18" selection-end-line="492" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.5.2/junit-platform-commons-1.5.2.jar!/org/junit/platform/commons/util/ReflectionUtils.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
@@ -467,29 +543,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
+        <state>
           <caret line="19" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/openjdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Throwable.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/openjdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Integer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="492" column="18" selection-start-line="492" selection-start-column="18" selection-end-line="492" selection-end-column="18" />
+        <state relative-caret-position="199">
+          <caret line="1225" selection-start-line="1225" selection-end-line="1225" />
+          <folding>
+            <element signature="e#45687#45688#0" expanded="true" />
+            <element signature="e#45715#45716#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/src/Liste.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="136">
+          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/openjdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/util/Comparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="149" column="8" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/src/DobbeltLenketListeTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="833" selection-start-line="833" selection-end-line="833" />
+        <state relative-caret-position="-18849">
+          <caret line="140" column="9" selection-start-line="140" selection-start-column="9" selection-end-line="140" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -498,15 +585,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/src/DobbeltLenketListe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="428" column="24" selection-start-line="428" selection-start-column="24" selection-end-line="428" selection-end-column="24" />
+        <state relative-caret-position="203">
+          <caret line="589" selection-start-line="589" selection-end-line="589" />
           <folding>
-            <element signature="e#2657#2658#0" expanded="true" />
-            <element signature="e#2686#2687#0" expanded="true" />
-            <element signature="e#8289#8290#0" expanded="true" />
-            <element signature="e#8333#8334#0" expanded="true" />
-            <element signature="e#12916#12917#0" expanded="true" />
-            <element signature="e#12963#12964#0" expanded="true" />
+            <element signature="e#2705#2706#0" expanded="true" />
+            <element signature="e#2734#2735#0" expanded="true" />
+            <element signature="e#13373#13374#0" expanded="true" />
+            <element signature="e#13420#13421#0" expanded="true" />
+            <element signature="e#14239#14240#0" expanded="true" />
+            <element signature="e#14317#14318#0" expanded="true" />
           </folding>
         </state>
       </provider>
